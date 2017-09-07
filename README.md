@@ -1,3 +1,3 @@
 # RTS
 Merwin's Ringtone Search<br />
-Nokia RTTTL ringtones with the ability to play any ringtone as a MIDI file
+Old school Nokia RTTTL ringtone website with the ability to play any ringtone as a MIDI file
