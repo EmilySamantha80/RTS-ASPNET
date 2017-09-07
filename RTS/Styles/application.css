@@ -1,0 +1,200 @@
+﻿h1 {
+    font-size: 2em
+}
+
+h2 {
+    font-size: 1.25em;
+}
+
+a {
+    color: blue;
+    background-color: transparent;
+}
+
+a:visited {
+    color: blue;
+    background-color: transparent;
+}
+
+a:hover {
+    color: blue;
+    background-color: transparent;
+}
+
+a:active {
+    color: blue;
+    background-color: transparent;
+}
+
+a:focus {
+    color: blue;
+    background-color: transparent;
+}
+
+.btn-primary {
+    color: white;
+    background-color: #337AB7;
+}
+
+.btn-primary:visited {
+    color: white;
+    background-color: #337AB7;
+}
+
+.btn-primary:hover {
+    color: white;
+    background-color: #286090;
+}
+
+.btn-primary:active {
+    color: white;
+    background-color: #286090;
+}
+
+.btn-primary:focus {
+    color: white;
+    background-color: #286090;
+}
+
+.btn-default {
+    color: black;
+    background-color: white;
+}
+
+.btn-default:visited {
+    color: black;
+    background-color: white;
+}
+
+.btn-default:hover {
+    color: black;
+    background-color: #f5f5f5;
+}
+
+.btn-default:active {
+    color: black;
+    background-color: #f5f5f5;
+}
+
+.btn-default:focus {
+    color: black;
+    background-color: #f5f5f5;
+}
+
+.active {
+    color: black !important;
+}
+
+.o-application--red {
+    color: #df0000 !important;
+}
+
+.o-application--black {
+    color: black !important;
+}
+
+.o-application--white {
+    color: white !important;
+}
+
+.t-application--fixedwidth {
+    width: 1000px;
+}
+
+.u-hidden {
+    visibility: hidden;
+}
+
+.t-application .o-application--breadcrumb {
+    margin-top: 15px;
+    border: 1px solid lightgrey;
+}
+
+.t-application .o-application--footer {
+    padding: 0px;
+    border: 1px solid lightgrey;
+}
+
+.t-application .o-application--form-group-slim {
+    margin-bottom: 5px;
+}
+
+.t-application .o-application--form-input-slim {
+    margin-bottom: 10px;
+}
+
+.t-application .o-application--list-item-slim {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 2px;
+}
+
+.t-application .o-application--panel-heading {
+    padding: 0px;
+    margin: 0px;
+    color: black;
+}
+
+/* screen-xs */
+@media (max-width: 767px) {
+    .pull-xs-left {
+        text-align: left !important;
+    }
+
+    .pull-xs-center {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .pull-xs-right {
+        text-align: right !important;
+    }
+}
+
+/* screen-sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .pull-sm-left {
+        text-align: left !important;
+    }
+
+    .pull-sm-center {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .pull-sm-right {
+        text-align: right !important;
+    }
+}
+
+/* screen-md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .pull-md-left {
+        text-align: left !important;
+    }
+
+    .pull-md-center {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .pull-md-right {
+        text-align: right !important;
+    }
+}
+
+/* screen-lg */
+@media (min-width: 1200px) {
+    .pull-lg-left {
+        text-align: left !important;
+    }
+
+    .pull-lg-center {
+        text-align: center !important;
+        margin: 0 auto !important;
+    }
+
+    .pull-lg-right {
+        text-align: right !important;
+    }
+}

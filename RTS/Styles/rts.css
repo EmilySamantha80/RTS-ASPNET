@@ -1,0 +1,11 @@
+﻿.subTitle {
+    font-size:1.5em;
+}
+.categoriesHeader {
+    font-size:1.5em;
+    color:black;
+}
+.categoryLink {
+    margin-right:10px;
+    white-space:nowrap;
+}
