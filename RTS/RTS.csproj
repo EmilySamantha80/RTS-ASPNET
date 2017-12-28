@@ -121,7 +121,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\GoDaddy.pubxml" />
+    <None Include="Properties\PublishProfiles\GoDaddy WebPublish.pubxml" />
+    <None Include="Properties\PublishProfiles\GoDaddy FTP.pubxml" />
     <None Include="Properties\PublishProfiles\rts.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

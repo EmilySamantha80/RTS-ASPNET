@@ -14,7 +14,7 @@ namespace RTS
         void Application_Start(object sender, EventArgs e)
         {
             //Set the DataDirectory path for the Application Settings
-            string path = Path.Combine(AssemblyInfo.GetCallingAssemblyPath(), "Database");
+            string path = AssemblyInfo.GetCallingAssemblyPath();
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
 
             //RegisterRoutes(RouteTable.Routes);
