@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Routing;
@@ -13,7 +14,7 @@ namespace RTS
         void Application_Start(object sender, EventArgs e)
         {
             //Set the DataDirectory path for the Application Settings
-            string path = AssemblyInfo.GetCallingAssemblyPath();
+            string path = Path.Combine(AssemblyInfo.GetCallingAssemblyPath(), "Database");
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
 
             //RegisterRoutes(RouteTable.Routes);
