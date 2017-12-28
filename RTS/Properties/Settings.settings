@@ -11,5 +11,8 @@
     <Setting Name="ResetVisitorsDaily" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="PageTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RTS</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

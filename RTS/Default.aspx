@@ -1,7 +1,7 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RTS.Default" %>
+﻿<%@ Page Title="RTS" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RTS.Default" %>
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head runat="server">
     <title>Merwin's Ringtone Search</title>
     <meta charset="utf-8" />
@@ -9,8 +9,6 @@
     <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
     <link href="Styles/application.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" rel="stylesheet" type="text/css" />
     <link href="Styles/rts.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" rel="stylesheet" type="text/css" />
 </head>
@@ -20,8 +18,8 @@
         <div class="container t-application">
             <div class="row" style="margin-bottom:15px;">
                 <div class="col-sm-12" style="text-align:center">
-                    <center><h1 style="margin-bottom:0px;"><a href="Default.aspx"><img src="Images/logo.png" class="img-responsive" /></a></h1>
-                        <div style="font-size:1.5em">Your source for old-school Nokia RTTTL ringtones</div>
+                    <center><a href="Default.aspx"><img src="Images/logo.png" class="img-responsive" alt="Merwin's Ringtone Search logo" /></a>
+                        <h1 style="font-size:1.5em;margin-top:0px;">Your source for old-school Nokia RTTTL ringtones</h1>
                     </center>
                 </div>
             </div>
@@ -32,6 +30,7 @@
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12 col-md-9">
+                                    <label class="sr-only" for="<%=SearchText.ClientID %>">Search ringtones</label>
                                     <input runat="server" id="SearchText" class="form-control" />
                                 </div>
                                 <div class="col-sm-3">

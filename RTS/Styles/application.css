@@ -33,28 +33,28 @@ a:focus {
 
 .btn-primary {
     color: white;
-    background-color: #337AB7;
+    background-color: #265A87;
 }
 
-.btn-primary:visited {
-    color: white;
-    background-color: #337AB7;
-}
+    .btn-primary:visited {
+        color: white;
+        background-color: #265A87;
+    }
 
-.btn-primary:hover {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:hover {
+        color: white;
+        background-color: #0000D1;
+    }
 
-.btn-primary:active {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:active {
+        color: white;
+        background-color: #0000D1;
+    }
 
-.btn-primary:focus {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:focus {
+        color: white;
+        background-color: #0000D1;
+    }
 
 .btn-default {
     color: black;

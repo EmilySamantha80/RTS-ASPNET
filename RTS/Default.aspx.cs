@@ -27,11 +27,13 @@ namespace RTS
             if (!String.IsNullOrEmpty(Request["Category"]))
             {
                 listTitle = "Category: " + HttpUtility.HtmlEncode(Request["Category"]);
+                Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
                 results = SqlExec.GetTonesByCategory(Request["Category"]);
             }
             else if (!String.IsNullOrEmpty(Request["Search"]))
             {
                 listTitle = "Search Results: " + HttpUtility.HtmlEncode(Request["Search"]);
+                Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
                 results = SqlExec.GetTonesBySearch(Request["Search"]);
             }
             else if (!String.IsNullOrEmpty(Request["MIDI"]))
@@ -150,7 +152,7 @@ namespace RTS
 
                     cell = new TableCell();
                     cell.Style.Add("text-align", "center");
-                    cell.Text = "<a href=\"?MIDI=" + result.ToneId.ToString() + "\">MIDI</a>";
+                    cell.Text = "<a href=\"?MIDI=" + result.ToneId.ToString() + "\">MIDI <span class='sr-only'> download of " + result.Artist + " - " + result.Title + " (" + result.ToneId.ToString() + ")</span>" + "</a>";
                     row.Cells.Add(cell);
 
                     cell = new TableCell();
