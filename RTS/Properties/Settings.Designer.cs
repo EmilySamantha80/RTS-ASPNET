@@ -25,19 +25,10 @@ namespace RTS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=BLAINE\\Ansible;Initial Catalog=rts;Integrated Security=SSPI;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\rts.sqlite;Version=3;")]
         public string DbConnectionString {
             get {
                 return ((string)(this["DbConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("System.Data.SqlClient")]
-        public string DbProviderName {
-            get {
-                return ((string)(this["DbProviderName"]));
             }
         }
         

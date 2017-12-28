@@ -14,6 +14,9 @@ namespace RTS.Model
         public string CategoryCode { get; set; }
         [NPoco.Column]
         public string CategoryName { get; set; }
+        [NPoco.Column]
+        public int SortId { get; set; }
+
     }
 
     [NPoco.TableName("Visitor")]
@@ -44,7 +47,7 @@ namespace RTS.Model
 
     [NPoco.TableName("Tone")]
     [NPoco.ExplicitColumns]
-    [NPoco.PrimaryKey("ToneId")]
+    [NPoco.PrimaryKey("ToneId", AutoIncrement = false)]
     public class Tone
     {
         [NPoco.Column]
