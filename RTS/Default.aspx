@@ -1,9 +1,9 @@
-﻿<%@ Page Title="" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RTS.Default" %>
+﻿<%@ Page Title="Merwin's Ringtone Search" Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="RTS.Default" %>
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head runat="server">
-    <title>Merwin's Ringtone Search</title>
+    <title></title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
@@ -90,6 +90,15 @@
                                 <div class="col-xs-6">
                                     <div style="float:right">
                                         Counting since December 4, 2001
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="footerText">
+                                    <div class="col-sm-12">
+                                        <div>
+                                            Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
+                                        </div>
                                     </div>
                                 </div>
                             </div>

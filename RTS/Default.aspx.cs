@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -12,6 +13,8 @@ namespace RTS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            var requestStart = DateTime.Now;
+
             var hitCounter = SqlExec.GetHitCounter();
             TotalUniqueHits.Text = hitCounter.UniqueHitsTotal.ToString("N0");
             TotalPageViews.Text = hitCounter.PageViewsTotal.ToString("N0");
@@ -76,6 +79,10 @@ namespace RTS
 
             LabelTitle.Text = listTitle;
             PopulateResults(results);
+
+            var requestEnd = DateTime.Now;
+            TimeSpan requestTime = requestEnd - requestStart;
+            RequestTime.Text = ((int)requestTime.TotalMilliseconds).ToString();
         }
 
         private void PopulateCategories()

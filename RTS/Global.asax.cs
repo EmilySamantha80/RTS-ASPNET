@@ -38,9 +38,14 @@ namespace RTS
             Response.BufferOutput = true;
         }
 
+        protected void Application_EndRequest(object sender, EventArgs e)
+        {
+            
+        }
+
         protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Application_Error(object sender, EventArgs e)
