@@ -26,7 +26,14 @@ namespace RTS
 
             if (!String.IsNullOrEmpty(Request["Category"]))
             {
-                listTitle = "Category: " + HttpUtility.HtmlEncode(Request["Category"]);
+                var category = SqlExec.GetCategoryByCategoryCode(HttpUtility.HtmlEncode(Request["Category"]));
+                if (category == null)
+                {
+                    // Category not found, go back
+                    Response.Redirect("Default.aspx", true);
+                    return;
+                }
+                listTitle = "Category: " + category.CategoryName;
                 Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
                 results = SqlExec.GetTonesByCategory(Request["Category"]);
             }

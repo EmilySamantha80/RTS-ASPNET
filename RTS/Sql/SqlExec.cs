@@ -27,6 +27,27 @@ namespace RTS
             }
         }
 
+        public static Model.Category GetCategoryByCategoryCode(string categoryCode)
+        {
+            using (var dbConnection = new SQLiteConnection(Properties.Settings.Default.DbConnectionString))
+            {
+                dbConnection.Open();
+                using (var db = new NPoco.Database(dbConnection, DatabaseType.SQLite))
+                {
+                    var sql = new NPoco.Sql();
+                    sql.Select("*");
+                    sql.From("Category");
+                    sql.Where("CategoryCode = @0", categoryCode);
+                    sql.OrderBy("SortId ASC, CategoryName ASC");
+                    var results = db.Fetch<Model.Category>(sql);
+                    if (results.Count > 0)
+                        return results[0];
+                    else
+                        return null;
+                }
+            }
+        }
+
         public static long GetToneCount()
         {
             using (var dbConnection = new SQLiteConnection(Properties.Settings.Default.DbConnectionString))
@@ -112,7 +133,7 @@ namespace RTS
                     var sql = new NPoco.Sql();
                     sql.Select("*");
                     sql.From("Tone");
-                    sql.Where("Artist LIKE @0 OR Title LIKE @0 OR ToneId = CASE WHEN ISNUMERIC(@1) = 1 THEN @1 ELSE -1 END", "%" + search + "%", search);
+                    sql.Where("Artist LIKE @0 OR Title LIKE @0 OR ToneId = @1", "%" + search + "%", search);
                     sql.OrderBy("Artist ASC, Title ASC");
                     var results = db.Fetch<Model.Tone>(sql);
                     return results;

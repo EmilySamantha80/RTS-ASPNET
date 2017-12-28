@@ -15,9 +15,21 @@ namespace RTS
             //Set the DataDirectory path for the Application Settings
             string path = AssemblyInfo.GetCallingAssemblyPath();
             AppDomain.CurrentDomain.SetData("DataDirectory", path);
+
+            //RegisterRoutes(RouteTable.Routes);
         }
 
-        void Application_BeginRequest(Object sender, EventArgs e)
+        void RegisterRoutes(RouteCollection routes)
+        {
+            //routes.MapPageRoute("", "Default", "~/Default.aspx");
+        }
+
+        protected void Session_Start(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Application_BeginRequest(object sender, EventArgs e)
         {
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.ExpiresAbsolute = DateTime.Now.AddDays(-1d);
@@ -25,12 +37,24 @@ namespace RTS
             Response.BufferOutput = true;
         }
 
-        protected void Session_Start(object sender, EventArgs e)
+        protected void Application_AuthenticateRequest(object sender, EventArgs e)
         {
+
         }
 
-        void Application_End(object sender, EventArgs e)
+        protected void Application_Error(object sender, EventArgs e)
         {
+
+        }
+
+        protected void Session_End(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void Application_End(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -33,28 +33,28 @@ a:focus {
 
 .btn-primary {
     color: white;
-    background-color: #265A87;
+    background-color: #337AB7;
 }
 
-    .btn-primary:visited {
-        color: white;
-        background-color: #265A87;
-    }
+.btn-primary:visited {
+    color: white;
+    background-color: #337AB7;
+}
 
-    .btn-primary:hover {
-        color: white;
-        background-color: #0000D1;
-    }
+.btn-primary:hover {
+    color: white;
+    background-color: #286090;
+}
 
-    .btn-primary:active {
-        color: white;
-        background-color: #0000D1;
-    }
+.btn-primary:active {
+    color: white;
+    background-color: #286090;
+}
 
-    .btn-primary:focus {
-        color: white;
-        background-color: #0000D1;
-    }
+.btn-primary:focus {
+    color: white;
+    background-color: #286090;
+}
 
 .btn-default {
     color: black;
@@ -197,4 +197,35 @@ a:focus {
     .pull-lg-right {
         text-align: right !important;
     }
+}
+
+/* Bootstrap overrides for square corners instead of rounded */
+.panel {
+    border-radius: 2px;
+    border: 1px solid lightgrey;
+}
+
+.panel-heading {
+    border-radius: 0px;
+}
+
+.btn {
+    border-radius: 2px;
+}
+
+.breadcrumb {
+    border-radius: 2px;
+}
+
+.form-control {
+    border-radius: 2px;
+}
+
+.input-group-addon {
+    border-radius: 2px;
+}
+
+.progress {
+    border-radius: 2px;
+    border: 1px solid lightgrey
 }
