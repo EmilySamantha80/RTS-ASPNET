@@ -13,9 +13,12 @@ namespace RTS
     {
         void Application_Start(object sender, EventArgs e)
         {
-            //Set the DataDirectory path for the Application Settings
-            string path = AssemblyInfo.GetCallingAssemblyPath();
-            AppDomain.CurrentDomain.SetData("DataDirectory", path);
+            // Create the [DbProviderName].ConnectionString.txt file with the connection string as the only line and include
+            // it in the base folder of the project, setting "Copy Always" for the "Copy to output directory" property.
+            // Example filename: System.Data.SqlClient.ConnectionString.txt
+            var path = Path.Combine(AssemblyInfo.GetCallingAssemblyPath(), Properties.Settings.Default.DbProviderName + ".ConnectionString.txt");
+            var connectionString = File.ReadAllLines(path);
+            SqlExec.DbConnectionString = connectionString[0];
 
             //RegisterRoutes(RouteTable.Routes);
         }

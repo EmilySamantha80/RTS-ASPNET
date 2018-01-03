@@ -25,15 +25,6 @@ namespace RTS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=|DataDirectory|\\Database\\rts.sqlite;Version=3;")]
-        public string DbConnectionString {
-            get {
-                return ((string)(this["DbConnectionString"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool ResetVisitorsDaily {
             get {
@@ -47,6 +38,15 @@ namespace RTS.Properties {
         public string PageTitle {
             get {
                 return ((string)(this["PageTitle"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("System.Data.SqlClient")]
+        public string DbProviderName {
+            get {
+                return ((string)(this["DbProviderName"]));
             }
         }
     }
