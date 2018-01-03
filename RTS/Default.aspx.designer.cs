@@ -85,13 +85,22 @@ namespace RTS {
         protected global::System.Web.UI.WebControls.Table ResultsTable;
         
         /// <summary>
-        /// RequestTime control.
+        /// FooterProductName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label RequestTime;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterProductName;
+        
+        /// <summary>
+        /// FooterCopyright control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterCopyright;
         
         /// <summary>
         /// TotalPageViews control.
@@ -101,6 +110,15 @@ namespace RTS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TotalPageViews;
+        
+        /// <summary>
+        /// RequestTime control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label RequestTime;
         
         /// <summary>
         /// TotalUniqueHits control.

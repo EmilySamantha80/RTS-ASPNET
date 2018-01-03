@@ -82,41 +82,32 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-6">
-                                    <div style="float:left">
-                                        Merwin's Ringtone Search (c)2000-2017 <a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a>
-                                    </div>
+                                <div class="col-md-6">
+                                    <span runat="server" id="FooterProductName"></span>
                                 </div>
-                                <div class="col-xs-6">
-                                    <div style="float:right">
-                                        Counting since December 4, 2001
+                                <div class="col-md-6 pull-md-right pull-lg-right">
+                                    Counting since December 4, 2001
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a>
+                                </div>
+                                <div class="col-md-6 pull-md-right pull-lg-right">
+                                    <div>
+                                        Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="footerText">
-                                    <div class="col-sm-12">
-                                        <div>
-                                            Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
-                                        </div>
+                                <div class="col-md-6">
+                                    <div>
+                                        Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
                                     </div>
                                 </div>
-                            </div>
-                            <div class="row">
-                                <div class="footerText">
-                                    <div class="col-sm-12">
-                                        <div>
-                                            Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="footerText">
-                                    <div class="col-sm-12">
-                                        <div>
-                                            Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label>
-                                        </div>
+                                <div class="col-md-6 pull-md-right pull-lg-right">
+                                    <div>
+                                        Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label>
                                     </div>
                                 </div>
                             </div>
