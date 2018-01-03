@@ -34,7 +34,7 @@ namespace RTS.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("RTS")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Merwin\'s Ringtone Search")]
         public string PageTitle {
             get {
                 return ((string)(this["PageTitle"]));

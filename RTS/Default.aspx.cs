@@ -18,6 +18,8 @@ namespace RTS
             FooterProductName.InnerText = AssemblyInfo.AssemblyTitle;
             FooterCopyright.InnerText = AssemblyInfo.AssemblyCopyright;
 
+            Page.Title = Properties.Settings.Default.PageTitle;
+
             var hitCounter = SqlExec.GetHitCounter();
             TotalUniqueHits.Text = hitCounter.UniqueHitsTotal.ToString("N0");
             TotalPageViews.Text = hitCounter.PageViewsTotal.ToString("N0");

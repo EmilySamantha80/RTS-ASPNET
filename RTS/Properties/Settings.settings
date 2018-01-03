@@ -6,7 +6,7 @@
       <Value Profile="(Default)">False</Value>
     </Setting>
     <Setting Name="PageTitle" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">RTS</Value>
+      <Value Profile="(Default)">Merwin's Ringtone Search</Value>
     </Setting>
     <Setting Name="DbProviderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">System.Data.SqlClient</Value>
