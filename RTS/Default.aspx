@@ -66,7 +66,7 @@
                                 <div class="col-xs-6">
                                     <div class="categoriesHeader"><asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label></div>
                                 </div>
-                                <div class="col-xs-6">
+                                <div class="col-xs-6" runat="server" id="SearchCountDiv">
                                     <div style="text-align:right;" class="categoriesHeader">Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
                                 </div>
                             </div>

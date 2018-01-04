@@ -30,6 +30,8 @@ namespace RTS
             var results = new List<Model.Tone>();
             string listTitle = "";
 
+            SearchCountDiv.Visible = true;
+
             string userIPAddress = IPAddress.GetUserIP();
             SqlExec.UpdateHitCounter(userIPAddress);
 
@@ -83,6 +85,7 @@ namespace RTS
             {
                 listTitle = "Top 10 Ringtones";
                 results = SqlExec.GetTopTenTones();
+                SearchCountDiv.Visible = false;
             }
 
             LabelTitle.Text = listTitle;
