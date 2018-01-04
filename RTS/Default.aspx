@@ -86,7 +86,7 @@
                                     <span runat="server" id="FooterProductName"></span>
                                 </div>
                                 <div class="col-md-6 pull-md-right pull-lg-right">
-                                    Counting since December 4, 2001
+                                    Counting since <span runat="server" id="FooterCountingSince"></span>
                                 </div>
                             </div>
                             <div class="row">

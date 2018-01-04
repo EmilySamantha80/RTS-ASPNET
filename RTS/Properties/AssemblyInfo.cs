@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("ESH")]
 [assembly: AssemblyProduct("Merwin's Ringtone Search")]
-[assembly: AssemblyCopyright("Copyright (c)2000-2017")]
+[assembly: AssemblyCopyright("Copyright (c)2000-2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

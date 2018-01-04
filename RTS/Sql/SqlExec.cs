@@ -132,14 +132,15 @@ namespace RTS
             }
         }
 
-        public static Model.HitCount GetHitCounter()
+        public static Model.Setting GetSetting(string settingName)
         {
             using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
             {
                 var sql = new NPoco.Sql();
                 sql.Select("*");
-                sql.From("HitCount");
-                var results = db.Fetch<Model.HitCount>(sql);
+                sql.From("Setting");
+                sql.Where("SettingName = @0", settingName);
+                var results = db.Fetch<Model.Setting>(sql);
                 if (results.Count > 0)
                 {
                     return results[0];
@@ -153,8 +154,8 @@ namespace RTS
 
         public static bool UpdateHitCounter(string ipAddress)
         {
-            CheckForNewDay();
-            if (Properties.Settings.Default.ResetVisitorsDaily)
+            var isNewDay = CheckForNewDay();
+            if (Properties.Settings.Default.ResetVisitorsDaily && isNewDay)
             {
                 ResetVisitors();
             }
@@ -201,33 +202,41 @@ namespace RTS
             using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
             {
                 var sql = new NPoco.Sql();
-                sql.Append("UPDATE HitCount SET");
-                sql.Append("PageViewsTotal = PageViewsTotal + 1");
+                sql.Append("UPDATE Setting SET");
+                sql.Append("SettingValue = CAST(CAST(SettingValue AS int) + 1 AS nvarchar(50))");
+                sql.Append("WHERE SettingName = 'PageViews'");
+                var pageViewResults = db.Execute(sql);
                 if (isUnique)
                 {
-                    sql.Append(", UniqueHitsTotal = UniqueHitsTotal + 1");
+                    sql.Append("UPDATE Setting SET");
+                    sql.Append("SettingValue = CAST(CAST(SettingValue AS int) + 1 AS nvarchar(50))");
+                    sql.Append("WHERE SettingName = 'UniqueHits'");
+                    var uniqueHitResults = db.Execute(sql);
                 }
-                var results = db.Execute(sql);
             }
         }
 
-        private static void CheckForNewDay()
+        private static bool CheckForNewDay()
         {
             using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
             {
                 var sql = new NPoco.Sql();
                 sql.Select("*");
-                sql.From("HitCount");
-                var results = db.Fetch<Model.HitCount>(sql);
-                if (results.Count > 0 && results[0].CurrentDate != DateTime.Parse(DateTime.Now.ToShortDateString()))
+                sql.From("Setting");
+                sql.Where("SettingName = 'CurrentDate'");
+                var results = db.Fetch<Model.Setting>(sql);
+                if (results.Count > 0 && DateTime.Parse(results[0].SettingValue).ToShortDateString() != DateTime.Now.ToShortDateString())
                 {
                     sql = new NPoco.Sql();
-                    sql.Append("UPDATE HitCount SET CurrentDate = CAST(GETDATE() as date)");
+                    sql.Append("UPDATE Setting SET");
+                    sql.Append("SettingValue = @0", DateTime.Now.ToString("yyyy-MM-dd"));
+                    sql.Append("WHERE SettingName = 'CurrentDate'");
                     db.Execute(sql);
+                    return true;
                 }
                 else
                 {
-                    return;
+                    return false;
                 }
             }
         }

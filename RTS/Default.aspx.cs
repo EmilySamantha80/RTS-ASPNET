@@ -20,9 +20,12 @@ namespace RTS
 
             Page.Title = Properties.Settings.Default.PageTitle;
 
-            var hitCounter = SqlExec.GetHitCounter();
-            TotalUniqueHits.Text = hitCounter.UniqueHitsTotal.ToString("N0");
-            TotalPageViews.Text = hitCounter.PageViewsTotal.ToString("N0");
+            var uniqueHitCounter = SqlExec.GetSetting("UniqueHits");
+            TotalUniqueHits.Text = long.Parse(uniqueHitCounter.SettingValue).ToString("N0");
+            var pageViewHitCounter = SqlExec.GetSetting("PageViews");
+            TotalPageViews.Text = long.Parse(pageViewHitCounter.SettingValue).ToString("N0");
+            var countingSince = SqlExec.GetSetting("CountingSince");
+            FooterCountingSince.InnerText = DateTime.Parse(countingSince.SettingValue).ToString("MMMM d, yyyy");
             TotalRingtones.Text = SqlExec.GetToneCount().ToString();
             var results = new List<Model.Tone>();
             string listTitle = "";

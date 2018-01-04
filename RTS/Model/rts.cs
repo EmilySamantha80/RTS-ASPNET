@@ -5,6 +5,18 @@ using System.Web;
 
 namespace RTS.Model
 {
+    [NPoco.TableName("Setting")]
+    [NPoco.ExplicitColumns]
+    [NPoco.PrimaryKey("SettingName", AutoIncrement = false)]
+    public class Setting
+    {
+        [NPoco.Column]
+        public string SettingName { get; set; }
+        [NPoco.Column]
+        public string SettingValue { get; set; }
+
+    }
+
     [NPoco.TableName("Category")]
     [NPoco.ExplicitColumns]
     [NPoco.PrimaryKey("CategoryCode", AutoIncrement = false)]
@@ -30,19 +42,6 @@ namespace RTS.Model
         public DateTime FirstVisit { get; set; }
         [NPoco.Column]
         public DateTime LastVisit { get; set; }
-    }
-
-    [NPoco.TableName("HitCount")]
-    [NPoco.ExplicitColumns]
-    public class HitCount
-    {
-        [NPoco.Column]
-        public Int64 UniqueHitsTotal { get; set; }
-        [NPoco.Column]
-        public Int64 PageViewsTotal { get; set; }
-        [NPoco.Column]
-        public DateTime CurrentDate { get; set; }
-
     }
 
     [NPoco.TableName("Tone")]
