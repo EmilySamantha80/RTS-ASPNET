@@ -169,7 +169,7 @@ namespace RTS
 
                     if (i % 2 == 0)
                     {
-                        row.CssClass = "resultTableHighlightRow";
+                        row.CssClass = "active";
                     }
 
                     //cell = new TableCell();
