@@ -32,29 +32,29 @@ a:focus {
 }
 
 .btn-primary {
-    color: white;
-    background-color: #337AB7;
+    color: #265A87;
+    background-color: white;
 }
 
-.btn-primary:visited {
-    color: white;
-    background-color: #337AB7;
-}
+    .btn-primary:visited {
+        color: #265A87;
+        background-color: white;
+    }
 
-.btn-primary:hover {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:hover {
+        color: white;
+        background-color: #265A87;
+    }
 
-.btn-primary:active {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:active {
+        color: white;
+        background-color: #265A87;
+    }
 
-.btn-primary:focus {
-    color: white;
-    background-color: #286090;
-}
+    .btn-primary:focus {
+        color: white;
+        background-color: #265A87;
+    }
 
 .btn-default {
     color: black;
@@ -197,6 +197,11 @@ a:focus {
     .pull-lg-right {
         text-align: right !important;
     }
+}
+
+/* Change the panel-primary color to be WCAG 2.0 AAA compliant */
+.panel-primary > .panel-heading {
+    background-color: #265A87;
 }
 
 /* Bootstrap overrides for square corners instead of rounded */

@@ -28,7 +28,7 @@
             <div class="row">
                 <div class="col-sm-2"></div>
                 <div class="col-sm-8">
-                    <div class="panel panel-info">
+                    <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
                                 <div class="col-sm-12 col-md-9">
@@ -60,19 +60,19 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-info" style="margin-bottom:0px;">
-                        <div class="panel-heading">
+                    <div class="panel panel-primary" style="margin-bottom:0px;">
+                        <div class="panel-heading" style="border:none;padding:7px;padding-bottom:0px;">
                             <div class="row">
                                 <div class="col-xs-6">
-                                    <div class="categoriesHeader"><asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label></div>
+                                    <div class="resultsHeader"><asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label></div>
                                 </div>
                                 <div class="col-xs-6" runat="server" id="SearchCountDiv">
-                                    <div style="text-align:right;" class="categoriesHeader">Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
+                                    <div style="text-align:right;" class="resultsHeader">Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
                                 </div>
                             </div>
                         </div>
                         <div class="panel-body" style="padding:0px">
-                            <asp:Table ID="ResultsTable" runat="server" style="margin:0px;" CssClass="table table-bordered table-responsive"></asp:Table>
+                            <asp:Table ID="ResultsTable" runat="server" style="margin:0px;border:none;" CssClass="table table-bordered table-responsive resultsTable"></asp:Table>
                         </div>
                     </div>
                 </div>

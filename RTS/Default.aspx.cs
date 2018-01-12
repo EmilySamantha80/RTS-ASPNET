@@ -128,6 +128,8 @@ namespace RTS
                 LabelSearchCount.Text = results.Count.ToString();
 
                 var headerRow = new TableHeaderRow();
+                headerRow.CssClass = "resultsTableHeaderRow";
+
                 var headerCell = new TableHeaderCell();
 
                 headerCell = new TableHeaderCell();
