@@ -58,65 +58,54 @@
                     </div>
                 </div>
             </div>
+            <div class="row resultsHeader">
+                <div class="col-xs-6" style="padding:7px;padding-bottom:0px;">
+                    <asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label>
+                </div>
+                <div class="col-xs-6" runat="server" id="SearchCountDiv" style="padding:7px;padding-bottom:0px;">
+                    <div style="text-align:right;">Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
+                </div>
+            </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-primary" style="margin-bottom:0px;border:none;">
-                        <div class="panel-heading" style="border:none;padding:7px;padding-bottom:0px;border-radius:0 0 0 0;">
-                            <div class="row">
-                                <div class="col-xs-6">
-                                    <div class="resultsHeader"><asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label></div>
-                                </div>
-                                <div class="col-xs-6" runat="server" id="SearchCountDiv">
-                                    <div style="text-align:right;" class="resultsHeader">Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="panel-body" style="padding:0px">
-                            <asp:Table ID="ResultsTable" runat="server" style="margin:0px;border:none;" CssClass="table table-bordered table-responsive resultsTable"></asp:Table>
+                    <asp:Table ID="ResultsTable" runat="server" CssClass="table table-bordered table-responsive resultsTable"></asp:Table>
+                </div>
+            </div>
+            <div class="footer" style="margin-top:15px;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <span runat="server" id="FooterProductName"></span>
+                    </div>
+                    <div class="col-md-6 pull-md-right pull-lg-right">
+                        Counting since <span runat="server" id="FooterCountingSince"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a>
+                    </div>
+                    <div class="col-md-6 pull-md-right pull-lg-right">
+                        <div>
+                            Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row" style="margin-top:15px;">
-                <div class="col-sm-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <span runat="server" id="FooterProductName"></span>
-                                </div>
-                                <div class="col-md-6 pull-md-right pull-lg-right">
-                                    Counting since <span runat="server" id="FooterCountingSince"></span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a>
-                                </div>
-                                <div class="col-md-6 pull-md-right pull-lg-right">
-                                    <div>
-                                        Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div>
-                                        Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
-                                    </div>
-                                </div>
-                                <div class="col-md-6 pull-md-right pull-lg-right">
-                                    <div>
-                                        Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
+                        </div>
+                    </div>
+                    <div class="col-md-6 pull-md-right pull-lg-right">
+                        <div>
+                            Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </form>
+    <br />
 </body>
 </html>
 

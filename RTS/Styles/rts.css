@@ -6,8 +6,13 @@
     color:black;
 }
 .resultsHeader {
-    font-size: 1.5em;
+    font-size: 1.7em;
     color: white;
+    background-color: #265A87;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 1px solid #C9C9C9;
+    border-bottom: none;
 }
 .resultsTableHeaderRow {
     color: white;
@@ -18,6 +23,17 @@
     white-space:nowrap;
 }
 
+.resultsTable {
+    margin: 0px;
+    border: 1px solid #C9C9C9;
+    border-top: none;
+}
 .resultsTable .resultsTableHeaderRow th {
     border:none;
+}
+
+.footer {
+    background-color: #F5F5F5;
+    border: 1px solid #C9C9C9;
+    padding: 7px;
 }
