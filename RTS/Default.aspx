@@ -31,12 +31,12 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-sm-12 col-md-9">
+                                <div class="col-xs-12 col-sm-8 col-md-9" style="padding-left:10px;padding-right:0px;">
                                     <label class="sr-only" for="<%=SearchText.ClientID %>">Search ringtones</label>
-                                    <input runat="server" id="SearchText" class="form-control" />
+                                    <input runat="server" id="SearchText" class="form-control" style="width:100%;" />
                                 </div>
-                                <div class="col-sm-3">
-                                    <asp:Button ID="SearchButton" runat="server" Text="Search Tones" CssClass="btn btn-primary" OnClick="SearchButton_Click"></asp:Button>
+                                <div class="col-xs-4 col-sm-4 col-md-3" style="padding-left:10px;padding-right:10px;">
+                                    <asp:Button ID="SearchButton" runat="server" Text="Search Tones" style="width:100%" CssClass="btn btn-primary" OnClick="SearchButton_Click"></asp:Button>
                                 </div>
                             </div>
                         </div>
