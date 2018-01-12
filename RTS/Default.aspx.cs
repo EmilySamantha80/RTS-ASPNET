@@ -132,9 +132,9 @@ namespace RTS
 
                 var headerCell = new TableHeaderCell();
 
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "ToneId";
-                headerRow.Cells.Add(headerCell);
+                //headerCell = new TableHeaderCell();
+                //headerCell.Text = "ToneId";
+                //headerRow.Cells.Add(headerCell);
 
                 headerCell = new TableHeaderCell();
                 headerCell.Text = "Download";
@@ -169,13 +169,13 @@ namespace RTS
 
                     if (i % 2 == 0)
                     {
-                        row.CssClass = "active";
+                        row.CssClass = "resultTableHighlightRow";
                     }
 
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "center");
-                    cell.Text = result.ToneId.ToString();
-                    row.Cells.Add(cell);
+                    //cell = new TableCell();
+                    //cell.Style.Add("text-align", "center");
+                    //cell.Text = result.ToneId.ToString();
+                    //row.Cells.Add(cell);
 
                     cell = new TableCell();
                     cell.Style.Add("text-align", "center");
