@@ -60,8 +60,8 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <div class="panel panel-primary" style="margin-bottom:0px;border:none">
-                        <div class="panel-heading" style="border:none;padding:7px;padding-bottom:0px;">
+                    <div class="panel panel-primary" style="margin-bottom:0px;border:none;">
+                        <div class="panel-heading" style="border:none;padding:7px;padding-bottom:0px;border-radius:0 0 0 0;">
                             <div class="row">
                                 <div class="col-xs-6">
                                     <div class="resultsHeader"><asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label></div>
