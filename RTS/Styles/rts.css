@@ -12,8 +12,8 @@
     margin-left: 0px;
     margin-right: 0px;
     border: 1px solid #265A87;
-    border-bottom: none;
-    border-radius:4px 4px 0 0;
+    border-bottom: 1px solid #265A87;
+    border-radius: 4px 4px 0 0;
 }
 .resultsTableHeaderRow {
     color: white;
