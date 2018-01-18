@@ -3,7 +3,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en-us">
 <head runat="server">
-    <title></title>
+    <title>Merwin's Ringtone Search</title>
+    <meta name="description" content="Your source for old-school nokia RTTTL ringtones" />
+    <meta name="keywords" content="ringtone,nokia,rtttl" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
@@ -20,9 +22,8 @@
         <div class="container t-application">
             <div class="row" style="margin-bottom:15px;">
                 <div class="col-sm-12" style="text-align:center">
-                    <center><a href="Default.aspx"><img src="Images/logo.png" width="696" height="75" class="img-responsive" alt="Merwin's Ringtone Search logo" /></a>
+                    <a href="Default.aspx"><img src="Images/logo.png" width="696" height="75" class="img-responsive" style="display:block;margin:auto;" alt="Merwin's Ringtone Search logo" /></a>
                         <h1 style="font-size:1.5em;margin-top:0px;">Your source for old-school Nokia RTTTL ringtones</h1>
-                    </center>
                 </div>
             </div>
             <div class="row">
