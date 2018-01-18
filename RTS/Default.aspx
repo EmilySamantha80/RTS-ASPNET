@@ -20,7 +20,7 @@
         <div class="container t-application">
             <div class="row" style="margin-bottom:15px;">
                 <div class="col-sm-12" style="text-align:center">
-                    <center><a href="Default.aspx"><img src="Images/logo.png" class="img-responsive" alt="Merwin's Ringtone Search logo" /></a>
+                    <center><a href="Default.aspx"><img src="Images/logo.png" width="696" height="75" class="img-responsive" alt="Merwin's Ringtone Search logo" /></a>
                         <h1 style="font-size:1.5em;margin-top:0px;">Your source for old-school Nokia RTTTL ringtones</h1>
                     </center>
                 </div>
