@@ -123,60 +123,13 @@ namespace RTS
 
         private void PopulateResults(List<Model.Tone> results)
         {
-            if (results != null)
-            {
-                LabelSearchCount.Text = results.Count.ToString();
+            if (results == null)
+                return;
 
-                var row = new TableRow();
-                var cell = new TableCell();
-                int i = 0;
-                foreach (var result in results)
-                {
-                    i++;
+            LabelSearchCount.Text = results.Count.ToString();
 
-                    row = new TableRow();
-
-                    if (i % 2 == 0)
-                    {
-                        row.CssClass = "active";
-                    }
-
-                    //cell = new TableCell();
-                    //cell.Style.Add("text-align", "center");
-                    //cell.Text = result.ToneId.ToString();
-                    //row.Cells.Add(cell);
-
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "center");
-                    cell.Text = "<a href=\"?MIDI=" + result.ToneId.ToString() + "\">MIDI <span class='sr-only'> download of " + result.Artist + " - " + result.Title + " (" + result.ToneId.ToString() + ")</span>" + "</a>";
-                    row.Cells.Add(cell);
-
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "left");
-                    cell.Text = result.Artist;
-                    row.Cells.Add(cell);
-
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "left");
-                    cell.Text = result.Title;
-                    row.Cells.Add(cell);
-
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "center");
-                    cell.Text = result.Counter.ToString();
-                    row.Cells.Add(cell);
-
-                    cell = new TableCell();
-                    cell.Style.Add("text-align", "left");
-                    cell.Style.Add("word-wrap", "break-word");
-                    cell.Style.Add("max-width", "500px");
-                    cell.Text = result.Rtttl;
-                    row.Cells.Add(cell);
-
-                    ResultsTable.Rows.Add(row);
-                }
-
-            }
+            ResultsRepeater.DataSource = results;
+            ResultsRepeater.DataBind();
         }
 
         protected void SearchButton_Click(object sender, EventArgs e)

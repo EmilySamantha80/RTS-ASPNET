@@ -69,15 +69,30 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <asp:Table ID="ResultsTable" runat="server" CssClass="table table-bordered table-responsive resultsTable">
-                        <asp:TableHeaderRow CssClass="resultsTableHeaderRow">
-                            <asp:TableHeaderCell Text="Download" style="text-align:center;"></asp:TableHeaderCell>
-                            <asp:TableHeaderCell Text="Artist"></asp:TableHeaderCell>
-                            <asp:TableHeaderCell Text="Title"></asp:TableHeaderCell>
-                            <asp:TableHeaderCell Text="Downloads" style="text-align:center;"></asp:TableHeaderCell>
-                            <asp:TableHeaderCell Text="RTTTL Text"></asp:TableHeaderCell>
-                        </asp:TableHeaderRow>
-                    </asp:Table>
+                    <asp:Repeater ID="ResultsRepeater" runat="server">
+                        <HeaderTemplate>
+                            <table class="table table-bordered table-responsive resultsTable">
+                                <thead class="resultsTableHeaderRow">
+                                    <th style="text-align:center;">Download</th>
+                                    <th>Artist</th>
+                                    <th>Title</th>
+                                    <th style="text-align:center;">Downloads</th>
+                                    <th>RTTTL Text</th>
+                                </thead>
+                        </HeaderTemplate>
+                        <ItemTemplate>
+                                <tr class="<%# Container.ItemIndex % 2 == 0 ? "" : "active" %>">
+                                    <td style="text-align:center;"><a href="?MIDI=<%# DataBinder.Eval(Container.DataItem,"ToneId") %>">MIDI<span class='sr-only'> download of <%# DataBinder.Eval(Container.DataItem,"Artist") %> - <%# DataBinder.Eval(Container.DataItem,"Title") %> ( <%# DataBinder.Eval(Container.DataItem,"ToneId") %> )</span></a></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem,"Artist") %></td>
+                                    <td><%# DataBinder.Eval(Container.DataItem,"Title") %></td>
+                                    <td style="text-align:center;"><%# DataBinder.Eval(Container.DataItem,"Counter").ToString() %></td>
+                                    <td style="word-wrap:break-word;max-width:500px;"><%# DataBinder.Eval(Container.DataItem,"Rtttl") %></td>
+                                </tr>
+                        </ItemTemplate>
+                        <FooterTemplate>
+                            </table>
+                        </FooterTemplate>
+                    </asp:Repeater>
                 </div>
             </div>
             <div class="footer" style="margin-top:15px;">
