@@ -25,7 +25,7 @@ namespace RTS
 
         void RegisterRoutes(RouteCollection routes)
         {
-            //routes.MapPageRoute("", "Default", "~/Default.aspx");
+            //routes.MapPageRoute("", "", "~/Default.aspx");
         }
 
         protected void Session_Start(object sender, EventArgs e)

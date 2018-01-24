@@ -127,37 +127,6 @@ namespace RTS
             {
                 LabelSearchCount.Text = results.Count.ToString();
 
-                var headerRow = new TableHeaderRow();
-                headerRow.CssClass = "resultsTableHeaderRow";
-
-                var headerCell = new TableHeaderCell();
-
-                //headerCell = new TableHeaderCell();
-                //headerCell.Text = "ToneId";
-                //headerRow.Cells.Add(headerCell);
-
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "Download";
-                headerRow.Cells.Add(headerCell);
-
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "Artist";
-                headerRow.Cells.Add(headerCell);
-
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "Title";
-                headerRow.Cells.Add(headerCell);
-
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "Downloads";
-                headerRow.Cells.Add(headerCell);
-
-                headerCell = new TableHeaderCell();
-                headerCell.Text = "RTTTL Text";
-                headerRow.Cells.Add(headerCell);
-
-                ResultsTable.Rows.Add(headerRow);
-
                 var row = new TableRow();
                 var cell = new TableCell();
                 int i = 0;
@@ -186,7 +155,6 @@ namespace RTS
                     cell.Style.Add("text-align", "left");
                     cell.Text = result.Artist;
                     row.Cells.Add(cell);
-
 
                     cell = new TableCell();
                     cell.Style.Add("text-align", "left");

@@ -69,7 +69,15 @@
             </div>
             <div class="row">
                 <div class="col-sm-12">
-                    <asp:Table ID="ResultsTable" runat="server" CssClass="table table-bordered table-responsive resultsTable"></asp:Table>
+                    <asp:Table ID="ResultsTable" runat="server" CssClass="table table-bordered table-responsive resultsTable">
+                        <asp:TableHeaderRow CssClass="resultsTableHeaderRow">
+                            <asp:TableHeaderCell Text="Download"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Text="Artist"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Text="Title"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Text="Downloads" style="text-align:center;"></asp:TableHeaderCell>
+                            <asp:TableHeaderCell Text="RTTTL Text"></asp:TableHeaderCell>
+                        </asp:TableHeaderRow>
+                    </asp:Table>
                 </div>
             </div>
             <div class="footer" style="margin-top:15px;">
