@@ -126,6 +126,15 @@
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-3"></div>
+                    <div class="col-md-3 pull-md-center pull-lg-center">
+                        <a href="http://vulc.in">Vulc.in</a>
+                    </div>
+                    <div class="col-md-3 pull-md-center pull-lg-center">
+                        <a href="http://pong.vulc.in">ESH Pong</a>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
