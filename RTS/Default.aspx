@@ -73,19 +73,19 @@
                         <HeaderTemplate>
                             <table class="table table-bordered table-responsive resultsTable">
                                 <thead class="resultsTableHeaderRow">
-                                    <th style="text-align:center;">Download</th>
                                     <th>Artist</th>
                                     <th>Title</th>
                                     <th style="text-align:center;">Downloads</th>
+                                    <th style="text-align:center;">Preview</th>
                                     <th>RTTTL Text</th>
                                 </thead>
                         </HeaderTemplate>
                         <ItemTemplate>
                                 <tr class="<%# Container.ItemIndex % 2 == 0 ? "" : "active" %>">
-                                    <td style="text-align:center;"><a href="?MIDI=<%# DataBinder.Eval(Container.DataItem,"ToneId") %>">MIDI<span class='sr-only'> download of <%# DataBinder.Eval(Container.DataItem,"Artist") %> - <%# DataBinder.Eval(Container.DataItem,"Title") %> ( <%# DataBinder.Eval(Container.DataItem,"ToneId") %> )</span></a></td>
                                     <td><%# DataBinder.Eval(Container.DataItem,"Artist") %></td>
                                     <td><%# DataBinder.Eval(Container.DataItem,"Title") %></td>
                                     <td style="text-align:center;"><%# DataBinder.Eval(Container.DataItem,"Counter").ToString() %></td>
+                                    <td style="text-align:center;"><a href="?MIDI=<%# DataBinder.Eval(Container.DataItem,"ToneId") %>">MIDI<span class='sr-only'> download of <%# DataBinder.Eval(Container.DataItem,"Artist") %> - <%# DataBinder.Eval(Container.DataItem,"Title") %> ( <%# DataBinder.Eval(Container.DataItem,"ToneId") %> )</span></a></td>
                                     <td style="word-wrap:break-word;max-width:500px;"><%# DataBinder.Eval(Container.DataItem,"Rtttl") %></td>
                                 </tr>
                         </ItemTemplate>
