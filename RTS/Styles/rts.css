@@ -1,24 +1,26 @@
 ﻿.subTitle {
     font-size:1.5em;
 }
-
+.categoryLink {
+    margin-right: 10px;
+    white-space: nowrap;
+}
+.resultsPanelHeading {
+    border: 0;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom: 0;
+    padding-top: 5px;
+    padding-bottom: 0
+}
 .resultsTableHeaderRow {
     color: white;
     background-color: #265A87;
 }
-.categoryLink {
-    margin-right:10px;
-    white-space:nowrap;
-}
-
 .resultsTable {
     margin: 0px;
-    border: 1px solid #265A87;
+    border: none;
 }
-.resultsTable .resultsTableHeaderRow th {
-    border:none;
-}
-
 .footer {
     background-color: #F5F5F5;
     border: 1px solid #C9C9C9;

@@ -8,8 +8,8 @@
     <div class="row">
         <div class="col-sm-1 col-lg-2"></div>
         <div class="col-sm-10 col-lg-8">
-            <div class="panel panel-primary" style="border:0;">
-                <div class="panel-heading" style="border-top-left-radius:2px;border-top-right-radius:2px;border-bottom:0;padding-top:5px;padding-bottom:0">
+            <div class="panel panel-primary">
+                <div class="panel-heading resultsPanelHeading">
                     <div class="row">
                         <div class="col-sm-6 resultsHeader resultsHeaderLeft">
                             <asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label>
@@ -22,12 +22,12 @@
                 <div class="panel-body" style="padding:0px;">
                     <asp:Repeater ID="ResultsRepeater" runat="server">
                         <HeaderTemplate>
-                            <table class="table table-bordered table-responsive resultsTable">
-                                <thead class="resultsTableHeaderRow">
-                                    <tr>
-                                        <th>Artist</th>
-                                        <th>Title</th>
-                                        <th style="text-align:center;">Views</th>
+                            <table class="table table-responsive resultsTable">
+                                <thead>
+                                    <tr class="resultsTableHeaderRow">
+                                        <th style="border-right-color:#265A87;">Artist</th>
+                                        <th style="border-right-color:#265A87;">Title</th>
+                                        <th style="border-right-color:#265A87;text-align:center;">Views</th>
                                         <th style="text-align:center;">Preview</th>
                                     </tr>
                                 </thead>
