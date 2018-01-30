@@ -12,8 +12,7 @@ namespace RTS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //If no requested toneId was sent, use the following toneId
-            int toneId = 87;
+            int toneId;
             if (!String.IsNullOrEmpty(Request["ToneId"]))
             {
                 
@@ -28,15 +27,24 @@ namespace RTS
                     Response.End();
                     return;
                 }
+            } else
+            {
+                Response.Redirect("Default.aspx");
+                return;
             }
             SqlExec.IncrementDownloadCount(toneId);
             var result = SqlExec.GetToneById(toneId);
+            if (result == null)
+            {
+                Response.Redirect("Default.aspx");
+                return;
+            }
 
             Page.Title = Properties.Settings.Default.PageTitle + " (" + result.Artist + " - " + result.Title + ")";
 
             ToneArtist.InnerText = result.Artist;
             ToneTitle.InnerText = result.Title;
-            ToneDownloads.InnerText = result.Counter.ToString();
+            ToneDownloads.InnerText = string.Format("{0:n0}", result.Counter);
             ToneRtttl.InnerText = result.Rtttl;
             TonePreviewLink.HRef = "Default.aspx?MIDI=" + result.ToneId.ToString();
 
