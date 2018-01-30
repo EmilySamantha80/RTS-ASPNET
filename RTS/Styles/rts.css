@@ -1,10 +1,7 @@
 ﻿.subTitle {
     font-size:1.5em;
 }
-.categoriesHeader {
-    font-size:1.5em;
-    color:black;
-}
+
 .resultsTableHeaderRow {
     color: white;
     background-color: #265A87;
@@ -60,6 +57,12 @@
     border: 1px solid #265A87;
 }
 
+.categoriesHeader {
+    font-size: 1.5em;
+    color: black;
+    margin-top: 0px;
+}
+
 /* screen-sm */
 @media (min-width: 768px) and (max-width: 991px) {
     .resultsHeaderLeft {
@@ -67,6 +70,11 @@
 
     .resultsHeaderRight {
         text-align: right;
+    }
+    .categoriesHeaderLeft {
+    }
+    .categoriesHeaderRight {
+        text-align:right;
     }
 }
 
@@ -78,6 +86,13 @@
     .resultsHeaderRight {
         text-align: right;
     }
+    .categoriesHeaderLeft {
+    }
+
+    .categoriesHeaderRight {
+        text-align:right;
+    }
+
 }
 
 /* screen-lg */
@@ -87,5 +102,11 @@
 
     .resultsHeaderRight {
         text-align:right;
+    }
+    .categoriesHeaderLeft {
+    }
+
+    .categoriesHeaderRight {
+        text-align: right;
     }
 }

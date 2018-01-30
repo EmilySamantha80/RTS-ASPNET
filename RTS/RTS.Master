@@ -35,7 +35,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
-                                <div class="col-xs-12 col-sm-8 col-md-9" style="padding-left:10px;padding-right:0px;">
+                                <div class="col-xs-12 col-sm-8 col-md-9" style="padding-left:10px;padding-right:10px;">
                                     <label class="sr-only" for="<%=SearchText.ClientID %>">Search ringtones</label>
                                     <input runat="server" id="SearchText" class="form-control" style="width:100%;" />
                                 </div>
@@ -46,11 +46,11 @@
                         </div>
                         <div class="panel-body" style="padding-top:5px;">
                             <div class="row">
-                                <div class="col-xs-6">
-                                    <div style="margin-top:0px;float:left;" class="categoriesHeader">Ringtone Categories</div>
+                                <div class="col-sm-6">
+                                    <div class="categoriesHeader categoriesHeaderLeft">Ringtone Categories</div>
                                 </div>
-                                <div class="col-xs-6">
-                                    <div style="margin-top:0px;float:right;" class="categoriesHeader">Total Ringtones: <asp:Label ID="TotalRingtones" runat="server" Text=""></asp:Label></div>
+                                <div class="col-sm-6">
+                                    <div class="categoriesHeader categoriesHeaderRight">Total Ringtones: <asp:Label ID="TotalRingtones" runat="server" Text=""></asp:Label></div>
                                 </div>
                             </div>
                             <div class="row">
