@@ -85,15 +85,6 @@ namespace RTS {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterProductName;
         
         /// <summary>
-        /// FooterCountingSince control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterCountingSince;
-        
-        /// <summary>
         /// FooterCopyright control.
         /// </summary>
         /// <remarks>
@@ -103,15 +94,6 @@ namespace RTS {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterCopyright;
         
         /// <summary>
-        /// TotalPageViews control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label TotalPageViews;
-        
-        /// <summary>
         /// RequestTime control.
         /// </summary>
         /// <remarks>
@@ -119,6 +101,24 @@ namespace RTS {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label RequestTime;
+        
+        /// <summary>
+        /// FooterCountingSince control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl FooterCountingSince;
+        
+        /// <summary>
+        /// TotalPageViews control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalPageViews;
         
         /// <summary>
         /// TotalUniqueHits control.

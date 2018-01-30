@@ -70,32 +70,14 @@
             <div class="footer">
                 <div class="row">
                     <div class="col-md-6">
-                        <span runat="server" id="FooterProductName"></span>
+                        <span runat="server" id="FooterProductName"></span><br />
+                        <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a><br />
+                        <span>Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms</span>
                     </div>
                     <div class="col-md-6 pull-md-right pull-lg-right">
-                        Counting since <span runat="server" id="FooterCountingSince"></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a>
-                    </div>
-                    <div class="col-md-6 pull-md-right pull-lg-right">
-                        <div>
-                            Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div>
-                            Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms
-                        </div>
-                    </div>
-                    <div class="col-md-6 pull-md-right pull-lg-right">
-                        <div>
-                            Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label>
-                        </div>
+                        <span>Counting since <span runat="server" id="FooterCountingSince"></span></span><br />
+                        <span>Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label></span><br />
+                        <span>Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label></span>
                     </div>
                 </div>
                 <div class="row">
