@@ -225,7 +225,9 @@ a:focus {
 }
 
 .panel-heading {
-    border-radius: 0px;
+    border-radius: 1px;
+    border-bottom-left-radius:0;
+    border-bottom-right-radius:0;
 }
 
 .btn {
