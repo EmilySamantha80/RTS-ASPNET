@@ -165,6 +165,9 @@ a:focus {
     .pull-sm-right {
         text-align: right !important;
     }
+    .t-application .o-application--form-span-slim {
+        margin-top: 7px;
+    }
 }
 
 /* screen-md */
@@ -180,6 +183,10 @@ a:focus {
 
     .pull-md-right {
         text-align: right !important;
+    }
+
+    .t-application .o-application--form-span-slim {
+        margin-top: 7px;
     }
 }
 
@@ -197,11 +204,18 @@ a:focus {
     .pull-lg-right {
         text-align: right !important;
     }
+    .t-application .o-application--form-span-slim {
+        margin-top: 7px;
+    }
 }
 
 /* Change the panel-primary color to be WCAG 2.0 AAA compliant */
 .panel-primary > .panel-heading {
     background-color: #265A87;
+}
+
+.control-label {
+    font-weight:600;
 }
 
 /* Bootstrap overrides for square corners instead of rounded */

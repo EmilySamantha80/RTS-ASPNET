@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en-us">
 <head runat="server">
     <title>Merwin's Ringtone Search</title>
     <meta name="description" content="Your source for old-school nokia RTTTL ringtones" />
@@ -30,8 +30,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-2"></div>
-                <div class="col-sm-8">
+                <div class="col-sm-1 col-lg-2"></div>
+                <div class="col-sm-10 col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <div class="row">
@@ -64,7 +64,10 @@
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div class="footer" style="margin-top:15px;">
+            <div class="row">
+                <div class="col-sm-1 col-lg-2"></div>
+                <div class="col-sm-10 col-lg-8">
+            <div class="footer">
                 <div class="row">
                     <div class="col-md-6">
                         <span runat="server" id="FooterProductName"></span>
@@ -103,6 +106,9 @@
                     <div class="col-md-3 pull-md-center pull-lg-center">
                         <a href="http://pong.vulc.in">ESH Pong</a>
                     </div>
+                </div>
+            </div>
+
                 </div>
             </div>
         </div>

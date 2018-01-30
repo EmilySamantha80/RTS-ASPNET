@@ -5,16 +5,6 @@
     font-size:1.5em;
     color:black;
 }
-.resultsHeader {
-    font-size: 1.7em;
-    color: white;
-    background-color: #265A87;
-    margin-left: 0px;
-    margin-right: 0px;
-    border: 1px solid #265A87;
-    border-bottom: 1px solid #265A87;
-    border-radius: 4px 4px 0 0;
-}
 .resultsTableHeaderRow {
     color: white;
     background-color: #265A87;
@@ -27,7 +17,6 @@
 .resultsTable {
     margin: 0px;
     border: 1px solid #265A87;
-    border-top: none;
 }
 .resultsTable .resultsTableHeaderRow th {
     border:none;
@@ -38,4 +27,65 @@
     border: 1px solid #C9C9C9;
     border-radius: 2px;
     padding: 7px;
+}
+
+/* screen-xs */
+@media (max-width: 767px) {
+    .resultsHeaderLeft {
+        font-size: 1.7em;
+        color: white;
+        background-color: #265A87;
+        padding: 0px;
+        padding-left: 10px;
+        border: 1px solid #265A87;
+    }
+
+    .resultsHeaderRight {
+        font-size: 1.7em;
+        color: white;
+        background-color: #265A87;
+        padding: 0px;
+        padding-left: 10px;
+        border: 1px solid #265A87;
+    }
+}
+
+.resultsHeader {
+    font-size: 1.7em;
+    color: white;
+    background-color: #265A87;
+    padding: 0px;
+    padding-left:7px;
+    padding-right:7px;
+    border: 1px solid #265A87;
+}
+
+/* screen-sm */
+@media (min-width: 768px) and (max-width: 991px) {
+    .resultsHeaderLeft {
+    }
+
+    .resultsHeaderRight {
+        text-align: right;
+    }
+}
+
+/* screen-md */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .resultsHeaderLeft {
+    }
+
+    .resultsHeaderRight {
+        text-align: right;
+    }
+}
+
+/* screen-lg */
+@media (min-width: 1200px) {
+    .resultsHeaderLeft {
+    }
+
+    .resultsHeaderRight {
+        text-align:right;
+    }
 }

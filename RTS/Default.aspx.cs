@@ -32,7 +32,8 @@ namespace RTS
             }
             else if (!String.IsNullOrEmpty(Request["Search"]))
             {
-                listTitle = "Search Results: " + HttpUtility.HtmlEncode(Request["Search"]);
+                string search = HttpUtility.UrlDecode((string)Request["Search"]);
+                listTitle = "Search Results: " + search;
                 Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
                 results = SqlExec.GetTonesBySearch(Request["Search"]);
             }
