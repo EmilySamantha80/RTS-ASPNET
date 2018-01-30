@@ -22,9 +22,7 @@ namespace RTS
                 }
                 catch (Exception ex)
                 {
-                    Response.Clear();
-                    Response.Write(ex.Message);
-                    Response.End();
+                    Response.Redirect("Default.aspx");
                     return;
                 }
             } else
