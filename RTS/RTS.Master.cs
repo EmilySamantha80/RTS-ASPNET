@@ -60,10 +60,5 @@ namespace RTS
 
         }
 
-        protected void SearchButton_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("Default.aspx?Search=" + SearchText.Value);
-
-        }
     }
 }
