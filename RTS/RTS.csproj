@@ -101,10 +101,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="IPAddress.cs" />
-    <Compile Include="MIDI\MidiSong.cs" />
-    <Compile Include="MIDI\MidiTrack.cs" />
-    <Compile Include="MIDI\RTTTL.cs" />
-    <Compile Include="MIDI\VariableLength.cs" />
+    <Compile Include="T4A\Midi.cs" />
     <Compile Include="Model\RTS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
@@ -119,6 +116,7 @@
     <Compile Include="RTS.Master.designer.cs">
       <DependentUpon>RTS.Master</DependentUpon>
     </Compile>
+    <Compile Include="T4A\Rtttl.cs" />
     <Compile Include="Sql\SqlExec.cs" />
     <Compile Include="ViewTone.aspx.cs">
       <DependentUpon>ViewTone.aspx</DependentUpon>

@@ -1,10 +1,10 @@
-﻿using RTS.MIDI;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using RTS.T4A;
 
 namespace RTS
 {
@@ -53,12 +53,14 @@ namespace RTS
                 }
                 SqlExec.IncrementDownloadCount(toneId);
                 var result = SqlExec.GetToneById(toneId);
-                var rtttl = new RTTTL();
-                var rtttlBytes = rtttl.ParseRtttl(result.Rtttl);
+                var rtttl = new Rtttl.RtttlTone();
+                var parseResult = Rtttl.ParseRtttl(result.Rtttl, ref rtttl);
+                var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, 11);
+                var midiBytes = midiChars.Select(c => (byte)c).ToArray();
                 Response.Clear();
                 Response.Headers.Add("Content-disposition", "attachment;filename=" + result.Artist + " - " + result.Title + ".mid");
                 Response.ContentType = "application/octet-stream";
-                Response.BinaryWrite(rtttlBytes);
+                Response.BinaryWrite(midiBytes);
                 Response.End();
                 return;
             }
