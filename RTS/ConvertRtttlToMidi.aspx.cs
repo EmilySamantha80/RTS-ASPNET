@@ -16,12 +16,19 @@ namespace RTS
             {
                 RtttlText.Value = Properties.Settings.Default.DefaultConvertRtttl;
                 Page.Title = Properties.Settings.Default.PageTitle + " - Convert your own RTTTL to MIDI";
+
+                string rtttl = Request["rtttl"];
+                if (rtttl != null)
+                {
+                    ConvertToMidi(rtttl);
+                }
+
             }
+
         }
 
-        protected void ConvertToMidi_Click(object sender, EventArgs e)
+        private void ConvertToMidi(string rtttlText)
         {
-            var rtttlText = RtttlText.Value;
             var rtttl = new Rtttl.RtttlTone();
             var parseResult = Rtttl.ParseRtttl(rtttlText, ref rtttl);
             if (!parseResult)

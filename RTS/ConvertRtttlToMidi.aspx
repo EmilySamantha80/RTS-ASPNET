@@ -21,12 +21,12 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-12">
-                            <textarea id="RtttlText" style="height:100px;width:100%;" runat="server"></textarea>
+                            <textarea id="RtttlText" class="form-control" style="height:100px;width:100%;" runat="server"></textarea>
                         </div>
                     </div>
                     <div class="row" style="margin-top:5px;">
                         <div class="col-sm-12">
-                            <asp:Button ID="ConvertToMidi" runat="server" Text="Convert to MIDI" class="btn btn-primary" OnClick="ConvertToMidi_Click" />
+                            <a onclick="post_rtttl();return false;" class="btn btn-primary">Convert to MIDI</a>
                         </div>
                     </div>
                     <div class="row" style="margin-top:10px;">
@@ -38,4 +38,13 @@
             </div>
         </div>
     </div>
+    <script>
+        function post_rtttl() {
+            var rtttl = document.getElementById('<%= RtttlText.ClientID %>').value;
+            //alert(rtttl);
+            var params = { rtttl: rtttl };
+            post("ConvertRtttlToMidi.aspx", params, "post");
+        }
+
+    </script>
 </asp:Content>
