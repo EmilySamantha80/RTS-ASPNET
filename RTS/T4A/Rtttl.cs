@@ -72,7 +72,7 @@ namespace RTS.T4A
             return true;
         }
 
-        public static bool IsDotted(ref string nt)
+        private static bool IsDotted(ref string nt)
         {
             bool r = false;
             char[] ntChars = nt.ToCharArray();
@@ -98,7 +98,7 @@ namespace RTS.T4A
             var track_data = new List<char>();
             track_data.AddRange(Midi.copy_right(CopyrightString));
             track_data.AddRange(Midi.track_name("MIDI by MidiGen 0.9"));
-            track_data.AddRange(Midi.volumeup());
+            track_data.AddRange(Midi.set_volume(127));
             track_data.AddRange(Midi.mf_write_tempo(rtttl.Defaults.BPM));
             track_data.AddRange(Midi.add_program(program));
             track_data.AddRange(notes2midi(rtttl));
@@ -117,7 +117,7 @@ namespace RTS.T4A
             return midi.ToArray();
         }
 
-        public static char[] notes2midi(Rtttl.RtttlTone rtttl)
+        private static char[] notes2midi(Rtttl.RtttlTone rtttl)
         {
             var r = new List<char>();
 
@@ -141,7 +141,7 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static int get_pitch(string nt, int oc)
+        private static int get_pitch(string nt, int oc)
         {
             int r = 0;
 
@@ -173,7 +173,7 @@ namespace RTS.T4A
             return r;
         }
 
-        public static int get_time(int t, bool isDotted)
+        private static int get_time(int t, bool isDotted)
         {
             int r = 0;
             switch (t)

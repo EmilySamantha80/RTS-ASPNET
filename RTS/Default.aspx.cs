@@ -55,7 +55,7 @@ namespace RTS
                 var result = SqlExec.GetToneById(toneId);
                 var rtttl = new Rtttl.RtttlTone();
                 var parseResult = Rtttl.ParseRtttl(result.Rtttl, ref rtttl);
-                var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, 11);
+                var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
                 var midiBytes = midiChars.Select(c => (byte)c).ToArray();
                 Response.Clear();
                 Response.Headers.Add("Content-disposition", "attachment;filename=" + result.Artist + " - " + result.Title + ".mid");

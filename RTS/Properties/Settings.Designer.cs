@@ -76,5 +76,14 @@ namespace RTS.Properties {
                 return ((string)(this["MidiErrorTone"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("11")]
+        public int MidiProgram {
+            get {
+                return ((int)(this["MidiProgram"]));
+            }
+        }
     }
 }

@@ -208,14 +208,17 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] volumeup()
+        public static char[] set_volume(int volume)
         {
+            //Volume 0-127
+
             var r = new List<char>();
 
-            r.AddRange(mf_write_midi_event(0, 0xb0, 0, data(0x07, 127)));
+            r.AddRange(mf_write_midi_event(0, 0xb0, 0, data(0x07, volume)));
 
             return r.ToArray();
         }
+
 
         public static int dotted(int nt)
         {
