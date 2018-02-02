@@ -38,7 +38,7 @@ namespace RTS
         private void PopulateCategories()
         {
             var link = new HyperLink();
-            link.Text = "Top 10";
+            link.Text = "Top " + Properties.Settings.Default.TopResultsCount.ToString();
             link.NavigateUrl = "Default.aspx";
             link.CssClass = "categoryLink";
             Categories.Controls.Add(link);
