@@ -23,5 +23,8 @@
     <Setting Name="MidiProgram" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">11</Value>
     </Setting>
+    <Setting Name="DefaultConvertRtttl" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">TocattaFugue:d=32,o=5,b=100:a#.,g#.,2a#,g#,f#,f,d#.,4d.,2d#,a#.,g#.,2a#,8f,8f#,8d,2d#,8d,8f,8g#,8b,8d6,4f6,4g#.,4f.,1g,32p</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

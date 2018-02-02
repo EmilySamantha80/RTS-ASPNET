@@ -43,6 +43,11 @@
                                     <input type="submit" style="width:100%" class="btn btn-primary" onclick="doSearch(); return false;" value="Search Tones">
                                 </div>
                             </div>
+                            <div class="row" style="margin-top:10px;">
+                                <div class="col-sm-12">
+                                    <a href="ConvertRtttlToMidi.aspx">Convert your own RTTTL to MIDI</a>
+                                </div>
+                            </div>
                         </div>
                         <div class="panel-body" style="padding-top:5px;">
                             <div class="row">

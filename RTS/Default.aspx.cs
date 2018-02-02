@@ -55,6 +55,11 @@ namespace RTS
                 var result = SqlExec.GetToneById(toneId);
                 var rtttl = new Rtttl.RtttlTone();
                 var parseResult = Rtttl.ParseRtttl(result.Rtttl, ref rtttl);
+                if (!parseResult)
+                {
+                    Console.WriteLine("Parsing error! Switching to Error tone");
+                    Rtttl.ParseRtttl(Rtttl.ErrorRtttl, ref rtttl);
+                }
                 var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
                 var midiBytes = midiChars.Select(c => (byte)c).ToArray();
                 Response.Clear();

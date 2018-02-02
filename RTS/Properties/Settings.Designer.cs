@@ -85,5 +85,15 @@ namespace RTS.Properties {
                 return ((int)(this["MidiProgram"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("TocattaFugue:d=32,o=5,b=100:a#.,g#.,2a#,g#,f#,f,d#.,4d.,2d#,a#.,g#.,2a#,8f,8f#,8d" +
+            ",2d#,8d,8f,8g#,8b,8d6,4f6,4g#.,4f.,1g,32p")]
+        public string DefaultConvertRtttl {
+            get {
+                return ((string)(this["DefaultConvertRtttl"]));
+            }
+        }
     }
 }
