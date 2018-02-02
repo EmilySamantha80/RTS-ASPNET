@@ -11,5 +11,14 @@
     <Setting Name="DbProviderName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">System.Data.SqlClient</Value>
     </Setting>
+    <Setting Name="TopResultsCount" Type="System.Int32" Scope="Application">
+      <Value Profile="(Default)">20</Value>
+    </Setting>
+    <Setting Name="MidiCopyright" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">MidiGen Copyright under GPL written by G.Babakhani 2001, Emily Heiner 2018</Value>
+    </Setting>
+    <Setting Name="MidiErrorTone" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Error:d=32,o=5,b=63:4c,4e,4g</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

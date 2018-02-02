@@ -66,8 +66,8 @@ namespace RTS
             }
             else
             {
-                listTitle = "Top 10 Ringtones";
-                results = SqlExec.GetTopTenTones();
+                listTitle = "Top " + Properties.Settings.Default.TopResultsCount.ToString() + " Ringtones";
+                results = SqlExec.GetTopTones();
                 SearchCountDiv.Visible = false;
             }
 

@@ -49,5 +49,32 @@ namespace RTS.Properties {
                 return ((string)(this["DbProviderName"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        public int TopResultsCount {
+            get {
+                return ((int)(this["TopResultsCount"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("MidiGen Copyright under GPL written by G.Babakhani 2001, Emily Heiner 2018")]
+        public string MidiCopyright {
+            get {
+                return ((string)(this["MidiCopyright"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Error:d=32,o=5,b=63:4c,4e,4g")]
+        public string MidiErrorTone {
+            get {
+                return ((string)(this["MidiErrorTone"]));
+            }
+        }
     }
 }

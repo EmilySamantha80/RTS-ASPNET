@@ -8,8 +8,8 @@ namespace RTS.T4A
 {
     public class Rtttl
     {
-        public static string CopyrightString = "MidiGen Copyright under GPL written by G.Babakhani 2001, Emily Heiner 2018";
-        public static string ErrorRtttl = "Error:d=32,o=5,b=63:4c,4e,4g";
+        public static string CopyrightString = Properties.Settings.Default.MidiCopyright;
+        public static string ErrorRtttl = Properties.Settings.Default.MidiErrorTone;
 
         public static bool ParseRtttl(string str, ref RtttlTone rtttl)
         {

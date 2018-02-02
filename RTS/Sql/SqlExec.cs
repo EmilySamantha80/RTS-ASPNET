@@ -55,12 +55,12 @@ namespace RTS
             }
         }
 
-        public static List<Model.Tone> GetTopTenTones()
+        public static List<Model.Tone> GetTopTones()
         {
             using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
             {
                 var sql = new NPoco.Sql();
-                sql.Select("TOP 10 *");
+                sql.Select("TOP " + Properties.Settings.Default.TopResultsCount.ToString() + " *");
                 sql.From("Tone");
                 sql.OrderBy("Counter DESC");
                 var results = db.Fetch<Model.Tone>(sql);
