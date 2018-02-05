@@ -93,13 +93,13 @@ namespace RTS.T4A
             return r;
         }
 
-        public static char[] ConvertRtttlToMidi(Rtttl.RtttlTone rtttl, int program)
+        public static byte[] ConvertRtttlToMidi(Rtttl.RtttlTone rtttl, int program)
         {
-            var midi = new List<char>();
+            var midi = new List<byte>();
 
             var head = Midi.mf_write_header_chunk(0, 1, 384);
 
-            var track_data = new List<char>();
+            var track_data = new List<byte>();
             track_data.AddRange(Midi.copy_right(CopyrightString));
             track_data.AddRange(Midi.track_name("MIDI by MidiGen 0.9"));
             track_data.AddRange(Midi.set_volume(127));
@@ -111,7 +111,7 @@ namespace RTS.T4A
 
             var track_head = Midi.mf_write_track_chunk(track_data.ToArray());
 
-            var track = new List<char>();
+            var track = new List<byte>();
             track.AddRange(track_head);
             track.AddRange(track_data);
 
@@ -121,9 +121,9 @@ namespace RTS.T4A
             return midi.ToArray();
         }
 
-        private static char[] notes2midi(Rtttl.RtttlTone rtttl)
+        private static byte[] notes2midi(Rtttl.RtttlTone rtttl)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int rest = 0;
 

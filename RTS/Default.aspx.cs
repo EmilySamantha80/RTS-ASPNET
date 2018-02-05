@@ -59,8 +59,7 @@ namespace RTS
                     Console.WriteLine("Parsing error! Switching to Error tone");
                     rtttl = Rtttl.ParseRtttl(Rtttl.ErrorRtttl);
                 }
-                var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
-                var midiBytes = midiChars.Select(c => (byte)c).ToArray();
+                var midiBytes = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
                 Response.Clear();
                 Response.Headers.Add("Content-disposition", "attachment;filename=" + result.Artist + " - " + result.Title + ".mid");
                 Response.ContentType = "application/octet-stream";

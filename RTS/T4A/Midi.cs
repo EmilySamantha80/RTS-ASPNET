@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Web;
 
 namespace RTS.T4A
@@ -8,14 +9,14 @@ namespace RTS.T4A
     public class Midi
     {
 
-        public static char eputc(int code)
+        public static byte eputc(int code)
         {
-            return (char)code;
+            return Convert.ToByte(code);
         }
 
-        public static char[] Write32Bit(int data)
+        public static byte[] Write32Bit(int data)
         {
-            var r = new char[4];
+            var r = new byte[4];
 
             r[0] = eputc((data >> 24) & 0xff);
             r[1] = eputc((data >> 16) & 0xff);
@@ -25,9 +26,9 @@ namespace RTS.T4A
             return r;
         }
 
-        public static char[] Write16Bit(int data)
+        public static byte[] Write16Bit(int data)
         {
-            var r = new char[2];
+            var r = new byte[2];
 
             r[0] = eputc((data & 0xff00) >> 8);
             r[1] = eputc(data & 0xff);
@@ -35,9 +36,9 @@ namespace RTS.T4A
             return r;
         }
 
-        public static char[] mf_write_header_chunk(int format, int ntracks, int division)
+        public static byte[] mf_write_header_chunk(int format, int ntracks, int division)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int ident = 0x4d546864;
             int length = 6;
@@ -51,9 +52,9 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] mf_write_track_chunk(char[] track)
+        public static byte[] mf_write_track_chunk(byte[] track)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int trkhdr = 0x4d54726b;
 
@@ -63,9 +64,9 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] WriteVarLen(int value)
+        public static byte[] WriteVarLen(int value)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int buffer = 0;
 
@@ -91,9 +92,9 @@ namespace RTS.T4A
             }
         }
 
-        public static char[] mf_write_tempo(int t)
+        public static byte[] mf_write_tempo(int t)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int tempo = (int)((double)60000000 / t);
 
@@ -108,13 +109,13 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] mf_write_midi_event(int delta_time, int type, int chan, int[] data)
+        public static byte[] mf_write_midi_event(int delta_time, int type, int chan, int[] data)
         {
             //		Console.WriteLine("delta_time:" + delta_time);
             //		Console.WriteLine("type:" + type);
             //		Console.WriteLine("chan:" + chan);
 
-            var r = new List<char>();
+            var r = new List<byte>();
 
             int c = 0;
 
@@ -151,9 +152,9 @@ namespace RTS.T4A
             return r;
         }
 
-        public static char[] end_track()
+        public static byte[] end_track()
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.Add(eputc(0));
             r.Add(eputc(0xff));
@@ -163,18 +164,18 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] add_program(int prg)
+        public static byte[] add_program(int prg)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.AddRange(mf_write_midi_event(0, 0xc0, 0, data1(prg)));
 
             return r.ToArray();
         }
 
-        public static char[] write_note(int s, int d, int p)
+        public static byte[] write_note(int s, int d, int p)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.AddRange(mf_write_midi_event(s, 0x90, 0, data(p, 100)));
             r.AddRange(mf_write_midi_event(d, 0x80, 0, data(p, 0)));
@@ -182,37 +183,37 @@ namespace RTS.T4A
             return r.ToArray();
         }
 
-        public static char[] copy_right(string str)
+        public static byte[] copy_right(string str)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.Add(eputc(0));
             r.Add(eputc(0xff));
             r.Add(eputc(0x02));
             r.Add(eputc(str.Length));
-            r.AddRange(str.ToCharArray());
+            r.AddRange(Encoding.ASCII.GetBytes(str));
 
             return r.ToArray();
         }
 
-        public static char[] track_name(string str)
+        public static byte[] track_name(string str)
         {
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.Add(eputc(0));
             r.Add(eputc(0xff));
             r.Add(eputc(0x03));
             r.Add(eputc(str.Length));
-            r.AddRange(str.ToCharArray());
+            r.AddRange(Encoding.ASCII.GetBytes(str));
 
             return r.ToArray();
         }
 
-        public static char[] set_volume(int volume)
+        public static byte[] set_volume(int volume)
         {
             //Volume 0-127
 
-            var r = new List<char>();
+            var r = new List<byte>();
 
             r.AddRange(mf_write_midi_event(0, 0xb0, 0, data(0x07, volume)));
 
