@@ -11,8 +11,9 @@ namespace RTS.T4A
         public static string CopyrightString = Properties.Settings.Default.MidiCopyright;
         public static string ErrorRtttl = Properties.Settings.Default.MidiErrorTone;
 
-        public static bool ParseRtttl(string str, ref RtttlTone rtttl)
+        public static RtttlTone ParseRtttl(string str)
         {
+            var rtttl = new RtttlTone();
             string[] sections = str.Split(':');
 
             if (sections.Length == 3)
@@ -26,7 +27,8 @@ namespace RTS.T4A
                     string[] paramSplit = param.Split('=');
                     if (paramSplit.Length < 2)
                     {
-                        return false;
+                        rtttl.HasParseError = true;
+                        return rtttl;
                     }
                     var paramName = paramSplit[0].ToLower();
                     var paramValue = paramSplit[1];
@@ -45,7 +47,8 @@ namespace RTS.T4A
                     }
                     else
                     {
-                        return false;
+                        rtttl.HasParseError = true;
+                        return rtttl;
                     }
                 }
 
@@ -59,7 +62,8 @@ namespace RTS.T4A
 
                     if (match.Groups.Count < 5 || match.Groups[2].Value == "")
                     {
-                        return false;
+                        rtttl.HasParseError = true;
+                        return rtttl;
                     }
 
                     note.Duration = match.Groups[1].Value == "" ? rtttl.Defaults.Duration : int.Parse(match.Groups[1].Value);
@@ -69,7 +73,7 @@ namespace RTS.T4A
                     rtttl.Notes.Add(note);
                 }
             }
-            return true;
+            return rtttl;
         }
 
         private static bool IsDotted(ref string nt)
@@ -197,6 +201,7 @@ namespace RTS.T4A
 
         public class RtttlTone
         {
+            public bool HasParseError { get; set; }
             public string Name { get; set; }
             public NoteDefaults Defaults { get; set; }
             public List<Note> Notes { get; set; }
@@ -206,6 +211,7 @@ namespace RTS.T4A
                 Name = "Ringtone";
                 Defaults = new NoteDefaults();
                 Notes = new List<Note>();
+                HasParseError = false;
             }
         }
 

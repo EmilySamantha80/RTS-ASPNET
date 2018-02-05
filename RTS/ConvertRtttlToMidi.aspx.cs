@@ -29,12 +29,11 @@ namespace RTS
 
         private void ConvertToMidi(string rtttlText)
         {
-            var rtttl = new Rtttl.RtttlTone();
-            var parseResult = Rtttl.ParseRtttl(rtttlText, ref rtttl);
-            if (!parseResult)
+            var rtttl = Rtttl.ParseRtttl(rtttlText);
+            if (rtttl.HasParseError)
             {
                 Console.WriteLine("Parsing error! Switching to Error tone");
-                Rtttl.ParseRtttl(Rtttl.ErrorRtttl, ref rtttl);
+                rtttl = Rtttl.ParseRtttl(Rtttl.ErrorRtttl);
             }
             var midiChars = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
             var midiBytes = midiChars.Select(c => (byte)c).ToArray();
