@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -11,7 +12,8 @@ namespace RTS
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var requestStart = DateTime.Now;
+            var requestTimer = new Stopwatch();
+            requestTimer.Start();
 
             string userIPAddress = IPAddress.GetUserIP();
             SqlExec.UpdateHitCounter(userIPAddress);
@@ -29,10 +31,8 @@ namespace RTS
             FooterCountingSince.InnerText = DateTime.Parse(countingSince.SettingValue).ToString("MMMM d, yyyy");
             TotalRingtones.Text = SqlExec.GetToneCount().ToString();
 
-
-            var requestEnd = DateTime.Now;
-            TimeSpan requestTime = requestEnd - requestStart;
-            RequestTime.Text = ((int)requestTime.TotalMilliseconds).ToString();
+            requestTimer.Stop();
+            RequestTime.Text = ((int)requestTimer.ElapsedMilliseconds).ToString();
         }
 
         private void PopulateCategories()
