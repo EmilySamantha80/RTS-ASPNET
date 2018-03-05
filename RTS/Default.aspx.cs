@@ -48,13 +48,22 @@ namespace RTS
                 }
                 catch (Exception ex)
                 {
-                    Response.Clear();
-                    Response.Write(ex.Message);
-                    Response.End();
+                    //Response.Clear();
+                    //Response.Write(ex.Message);
+                    //Response.End();
+                    Response.Redirect("Default.aspx");
                     return;
                 }
                 SqlExec.IncrementDownloadCount(toneId);
                 var result = SqlExec.GetToneById(toneId);
+                if (result == null)
+                {
+                    //Response.Clear();
+                    //Response.Write("Invalid Tone ID!");
+                    //Response.End();
+                    Response.Redirect("Default.aspx");
+                    return;
+                }
                 var rtttl = Rtttl.ParseRtttl(result.Rtttl);
                 if (rtttl.HasParseError)
                 {
