@@ -19,7 +19,8 @@ namespace RTS
 
             if (!String.IsNullOrEmpty(Request["Category"]))
             {
-                var category = SqlExec.GetCategoryByCategoryCode(HttpUtility.HtmlEncode(Request["Category"]));
+                var searchText = Truncate(Request["Category"], 25);
+                var category = SqlExec.GetCategoryByCategoryCode(HttpUtility.HtmlEncode(searchText));
                 if (category == null)
                 {
                     // Category not found, go back
@@ -28,14 +29,15 @@ namespace RTS
                 }
                 listTitle = "Category: " + category.CategoryName;
                 Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
-                results = SqlExec.GetTonesByCategory(Request["Category"]);
+                results = SqlExec.GetTonesByCategory(searchText);
             }
             else if (!String.IsNullOrEmpty(Request["Search"]))
             {
-                string search = HttpUtility.UrlDecode((string)Request["Search"]);
+                var searchText = Truncate(Request["Search"], 25);
+                string search = HttpUtility.UrlDecode(searchText);
                 listTitle = "Search Results: " + search;
                 Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
-                results = SqlExec.GetTonesBySearch(Request["Search"]);
+                results = SqlExec.GetTonesBySearch(searchText);
             }
             else if (!String.IsNullOrEmpty(Request["MIDI"]))
             {
@@ -77,6 +79,12 @@ namespace RTS
             LabelTitle.Text = listTitle;
             PopulateResults(results);
 
+        }
+
+        public static string Truncate(string value, int maxLength)
+        {
+            if (string.IsNullOrEmpty(value)) return value;
+            return value.Length <= maxLength ? value : value.Substring(0, maxLength);
         }
 
         private void PopulateResults(List<Model.Tone> results)
