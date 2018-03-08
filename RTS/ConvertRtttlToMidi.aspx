@@ -26,7 +26,7 @@
                     </div>
                     <div class="row" style="margin-top:5px;">
                         <div class="col-sm-12">
-                            <a onclick="post_rtttl();return false;" class="btn btn-primary">Convert to MIDI</a>
+                            <a href="#" onclick="post_rtttl();return false;" class="btn btn-primary">Convert to MIDI</a>
                         </div>
                     </div>
                     <%--<div class="row" style="margin-top:10px;">
