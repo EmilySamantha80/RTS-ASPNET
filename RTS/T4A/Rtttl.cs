@@ -57,6 +57,10 @@ namespace RTS.T4A
                 Regex noteRegex = new Regex(@"^(\d{1,2})?([a-zA-Z]#?)(\.)?(\d)?$");
                 foreach (string s in nts)
                 {
+                    //Ignore empty notes, including a trailing comma at the end of the RTTTL
+                    if (String.IsNullOrWhiteSpace(s))
+                        continue;
+
                     var note = new Note();
                     var match = noteRegex.Match(s);
 
