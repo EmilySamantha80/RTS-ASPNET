@@ -85,8 +85,16 @@ a:focus {
     color: black !important;
 }
 
+.o-application--blue {
+    color: #0000FF !important;
+}
+
+.o-application--green {
+    color: #006600 !important;
+}
+
 .o-application--red {
-    color: #df0000 !important;
+    color: #B30000 !important;
 }
 
 .o-application--black {

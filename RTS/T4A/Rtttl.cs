@@ -13,6 +13,7 @@ namespace RTS.T4A
 
         public static RtttlTone ParseRtttl(string str)
         {
+            string invalidDefaultMessage = "Invalid control pair: ";
             var rtttl = new RtttlTone();
             string[] sections = str.Split(':');
 
@@ -28,6 +29,7 @@ namespace RTS.T4A
                     if (paramSplit.Length < 2)
                     {
                         rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = invalidDefaultMessage + param;
                         return rtttl;
                     }
                     var paramName = paramSplit[0].ToLower();
@@ -35,19 +37,59 @@ namespace RTS.T4A
 
                     if (paramName == "o")
                     {
-                        rtttl.Defaults.Octave = int.Parse(paramValue);
+                        try
+                        {
+                            rtttl.Defaults.Octave = int.Parse(paramValue);
+                        }
+                        catch
+                        {
+                            rtttl.HasParseError = true;
+                            rtttl.ParseErrorMessage = invalidDefaultMessage + param;
+                            return rtttl;
+                        }
+                        if (!ValidateNoteOctave(rtttl.Defaults.Octave))
+                        {
+                            rtttl.HasParseError = true;
+                            rtttl.ParseErrorMessage = invalidDefaultMessage + param;
+                            return rtttl;
+                        }
                     }
                     else if (paramName == "d")
                     {
-                        rtttl.Defaults.Duration = int.Parse(paramValue);
+                        try
+                        {
+                            rtttl.Defaults.Duration = int.Parse(paramValue);
+                        }
+                        catch
+                        {
+                            rtttl.HasParseError = true;
+                            rtttl.ParseErrorMessage = invalidDefaultMessage + param;
+                            return rtttl;
+                        }
+                        if (!ValidateNoteDuration(rtttl.Defaults.Duration))
+                        {
+                            rtttl.HasParseError = true;
+                            rtttl.ParseErrorMessage = invalidDefaultMessage + param;
+                            return rtttl;
+                        }
                     }
                     else if (paramName == "b")
                     {
-                        rtttl.Defaults.BPM = int.Parse(paramValue);
+                        try
+                        {
+                            rtttl.Defaults.BPM = int.Parse(paramValue);
+                        }
+                        catch
+                        {
+                            rtttl.HasParseError = true;
+                            rtttl.ParseErrorMessage = invalidDefaultMessage + param;
+                            return rtttl;
+                        }
                     }
                     else
                     {
                         rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = invalidDefaultMessage + param;
                         return rtttl;
                     }
                 }
@@ -67,17 +109,98 @@ namespace RTS.T4A
                     if (match.Groups.Count < 5 || match.Groups[2].Value == "")
                     {
                         rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note format: " + s;
                         return rtttl;
                     }
 
-                    note.Duration = match.Groups[1].Value == "" ? rtttl.Defaults.Duration : int.Parse(match.Groups[1].Value);
+                    // Parse duration
+                    try
+                    {
+                        note.Duration = match.Groups[1].Value == "" ? rtttl.Defaults.Duration : int.Parse(match.Groups[1].Value);
+                    }
+                    catch
+                    {
+                        rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note duration: " + s;
+                        return rtttl;
+                    }
+                    if (!ValidateNoteDuration(note.Duration))
+                    {
+                        rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note duration: " + s;
+                        return rtttl;
+                    }
+
+                    // Parse pitch
                     note.Pitch = match.Groups[2].Value;
+                    if (!ValidateNotePitch(note.Pitch))
+                    {
+                        rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note pitch: " + s;
+                        return rtttl;
+                    }
+
+                    // Parse dotted. Doesn't need validation
                     note.Dotted = match.Groups[3].Value == "" ? false : true;
-                    note.Octave = match.Groups[4].Value == "" ? rtttl.Defaults.Octave : int.Parse(match.Groups[4].Value);
+
+                    // Parse octave
+                    try
+                    {
+                        note.Octave = match.Groups[4].Value == "" ? rtttl.Defaults.Octave : int.Parse(match.Groups[4].Value);
+                    }
+                    catch
+                    {
+                        rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note octave: " + s;
+                    }
+                    if (!ValidateNoteOctave(note.Octave))
+                    {
+                        rtttl.HasParseError = true;
+                        rtttl.ParseErrorMessage = "Invalid note octave: " + s;
+                        return rtttl;
+                    }
                     rtttl.Notes.Add(note);
                 }
             }
             return rtttl;
+        }
+
+        private static bool ValidateNoteDotted(string dotted)
+        {
+            bool result = false;
+            if (dotted == "" || dotted == ".")
+                result = true;
+
+            return result;
+        }
+
+        private static bool ValidateNoteDuration(int duration)
+        {
+            bool result = false;
+            if (duration == 1 || duration == 2 || duration == 4 || duration == 8 || duration == 16 || duration == 32)
+                result = true;
+
+            return result;
+        }
+
+        private static bool ValidateNotePitch(string note)
+        {
+            note = note.ToUpperInvariant();
+            bool result = false;
+            if (note == "P" || note == "C" || note == "C#" || note == "D" || note == "D#" || note == "E" || note == "F" || note == "F#"
+                || note == "G" || note == "G#" || note == "A" || note == "A#" || note == "B")
+                result = true;
+
+            return result;
+        }
+
+        private static bool ValidateNoteOctave(int scale)
+        {
+            bool result = false;
+            if (scale >= 4 && scale <= 7)
+                result = true;
+
+            return result;
         }
 
         private static bool IsDotted(ref string nt)
@@ -206,6 +329,7 @@ namespace RTS.T4A
         public class RtttlTone
         {
             public bool HasParseError { get; set; }
+            public string ParseErrorMessage { get; set; }
             public string Name { get; set; }
             public NoteDefaults Defaults { get; set; }
             public List<Note> Notes { get; set; }
@@ -216,6 +340,7 @@ namespace RTS.T4A
                 Defaults = new NoteDefaults();
                 Notes = new List<Note>();
                 HasParseError = false;
+                ParseErrorMessage = String.Empty;
             }
         }
 

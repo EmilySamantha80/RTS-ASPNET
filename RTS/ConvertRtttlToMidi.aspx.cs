@@ -14,6 +14,8 @@ namespace RTS
         {
             if (!Page.IsPostBack)
             {
+                ErrorDiv.Visible = false;
+                ErrorMessage.InnerText = "";
                 RtttlText.Value = Properties.Settings.Default.DefaultConvertRtttl;
                 Page.Title = Properties.Settings.Default.PageTitle + " - Convert your own RTTTL to MIDI";
 
@@ -32,8 +34,13 @@ namespace RTS
             var rtttl = Rtttl.ParseRtttl(rtttlText);
             if (rtttl.HasParseError)
             {
-                Console.WriteLine("Parsing error! Switching to Error tone");
-                rtttl = Rtttl.ParseRtttl(Rtttl.ErrorRtttl);
+                ErrorDiv.Visible = true;
+                ErrorMessage.InnerText = rtttl.ParseErrorMessage;
+                RtttlText.Value = rtttlText;
+                return;
+
+                // Parsing error! Switching to Error tone
+                //rtttl = Rtttl.ParseRtttl(Rtttl.ErrorRtttl);
             }
             var midiBytes = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
             Response.Clear();

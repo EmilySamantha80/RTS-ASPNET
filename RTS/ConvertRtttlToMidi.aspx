@@ -29,9 +29,14 @@
                             <a onclick="post_rtttl();return false;" class="btn btn-primary">Convert to MIDI</a>
                         </div>
                     </div>
-                    <div class="row" style="margin-top:10px;">
+                    <%--<div class="row" style="margin-top:10px;">
                         <div class="col-sm-12">
                             <span style="font-weight:600">Note:</span> If you hear 3 rising tones instead of your ringtone, it means that your RTTTL text has errors in it.
+                        </div>
+                    </div>--%>
+                    <div class="row" style="margin-top:10px;" runat="server" id="ErrorDiv" visible="false">
+                        <div class="col-sm-12">
+                            <span style="font-weight:600" class="o-application--red" runat="server" id="ErrorMessage" role="alert" aria-live="assertive" />
                         </div>
                     </div>
                 </div>
