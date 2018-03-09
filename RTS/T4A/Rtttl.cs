@@ -13,6 +13,9 @@ namespace RTS.T4A
 
         public static RtttlTone ParseRtttl(string str)
         {
+            // Get rid of any newlines in the RTTTL
+            str = str.Replace(Environment.NewLine, "");
+
             string invalidDefaultMessage = "Invalid control pair: ";
             var rtttl = new RtttlTone();
             string[] sections = str.Split(':');
