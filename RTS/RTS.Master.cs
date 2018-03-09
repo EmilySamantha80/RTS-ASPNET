@@ -43,6 +43,12 @@ namespace RTS
             link.CssClass = "categoryLink";
             Categories.Controls.Add(link);
 
+            link = new HyperLink();
+            link.Text = "New";
+            link.NavigateUrl = "Default.aspx?Category=New";
+            link.CssClass = "categoryLink";
+            Categories.Controls.Add(link);
+
             var results = SqlExec.GetCategories();
             foreach (var result in results)
             {

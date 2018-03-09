@@ -20,16 +20,26 @@ namespace RTS
             if (!String.IsNullOrEmpty(Request["Category"]))
             {
                 var searchText = Truncate(Request["Category"], 25);
-                var category = SqlExec.GetCategoryByCategoryCode(HttpUtility.HtmlEncode(searchText));
-                if (category == null)
+
+                if (searchText.ToUpperInvariant() == "NEW")
                 {
-                    // Category not found, go back
-                    Response.Redirect("Default.aspx", true);
-                    return;
+                    listTitle = "New ringtones";
+                    Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
+                    results = SqlExec.GetNewTones();
                 }
-                listTitle = "Category: " + category.CategoryName;
-                Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
-                results = SqlExec.GetTonesByCategory(searchText);
+                else
+                {
+                    var category = SqlExec.GetCategoryByCategoryCode(HttpUtility.HtmlEncode(searchText));
+                    if (category == null)
+                    {
+                        // Category not found, go back
+                        Response.Redirect("Default.aspx", true);
+                        return;
+                    }
+                    listTitle = "Category: " + category.CategoryName;
+                    Page.Title = Properties.Settings.Default.PageTitle + " - " + listTitle;
+                    results = SqlExec.GetTonesByCategory(searchText);
+                }
             }
             else if (!String.IsNullOrEmpty(Request["Search"]))
             {
@@ -80,7 +90,7 @@ namespace RTS
             }
             else
             {
-                listTitle = "Top " + Properties.Settings.Default.TopResultsCount.ToString() + " Ringtones";
+                listTitle = "Top " + Properties.Settings.Default.TopResultsCount.ToString() + " ringtones";
                 results = SqlExec.GetTopTones();
                 SearchCountDiv.Visible = false;
             }

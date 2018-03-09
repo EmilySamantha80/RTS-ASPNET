@@ -18,6 +18,16 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="form-group form-tight o-application--form-group-slim">
+                                    <div class="control-label col-sm-3 col-md-3 col-lg-3">Categories</div>
+                                    <div class="col-sm-3 o-application--form-span-slim">
+                                        <div runat="server" id="ToneCategories" aria-label="Categories"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group form-tight o-application--form-group-slim">
                                     <div class="control-label col-sm-3 col-md-3 col-lg-3">Downloads</div>
                                     <div class="col-sm-3 o-application--form-span-slim">
                                         <div runat="server" id="ToneDownloads" aria-label="Downloads"></div>

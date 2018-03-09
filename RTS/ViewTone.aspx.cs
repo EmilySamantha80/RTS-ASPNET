@@ -40,6 +40,20 @@ namespace RTS
 
             Page.Title = Properties.Settings.Default.PageTitle + " (" + result.Artist + " - " + result.Title + ")";
 
+
+            var categories = result.Category.Trim('-').Split('-');
+            foreach (var category in categories)
+            {
+                var categoryName = SqlExec.GetCategoryByCategoryCode(category);
+                if (categoryName != null)
+                {
+                    ToneCategories.InnerText += categoryName.CategoryName + ",";
+                } else
+                {
+                    ToneCategories.InnerText += category + ",";
+                }
+            }
+            ToneCategories.InnerText = ToneCategories.InnerText.TrimEnd(',');
             ToneArtist.InnerText = result.Artist;
             ToneTitle.InnerText = result.Title;
             ToneDownloads.InnerText = string.Format("{0:n0}", result.Counter);

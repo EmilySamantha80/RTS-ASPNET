@@ -68,6 +68,19 @@ namespace RTS
             }
         }
 
+        public static List<Model.Tone> GetNewTones()
+        {
+            using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
+            {
+                var sql = new NPoco.Sql();
+                sql.Select("TOP " + Properties.Settings.Default.NewResultsCount.ToString() + " *");
+                sql.From("Tone");
+                sql.OrderBy("Added DESC");
+                var results = db.Fetch<Model.Tone>(sql);
+                return results;
+            }
+        }
+
         public static List<Model.Tone> GetTonesByCategory(string category)
         {
             using (var db = new NPoco.Database(DbConnectionString, Properties.Settings.Default.DbProviderName))
