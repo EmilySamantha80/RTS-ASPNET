@@ -15,7 +15,7 @@
                             <asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label>
                         </div>
                         <div class="col-sm-6 text-sm-right resultsHeader" runat="server" id="SearchCountDiv">
-                            <div>Found <asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label> ringtones</div>
+                            <div><asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label></div>
                         </div>
                     </div>
                 </div>

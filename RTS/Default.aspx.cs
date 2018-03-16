@@ -111,7 +111,13 @@ namespace RTS
             if (results == null)
                 return;
 
-            LabelSearchCount.Text = results.Count.ToString();
+            if (results.Count == 1)
+            {
+                LabelSearchCount.Text = "Found " + results.Count.ToString() + " ringtone";
+            } else
+            {
+                LabelSearchCount.Text = "Found " + results.Count.ToString() + " ringtones";
+            }
 
             ResultsRepeater.DataSource = results;
             ResultsRepeater.DataBind();
