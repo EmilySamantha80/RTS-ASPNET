@@ -32,8 +32,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-2"></div>
-                <div class="col-sm-12 col-lg-8">
+                <div class="col-lg-1 col-xl-2"></div>
+                <div class="col-md-12 col-lg-10 col-xl-8">
                     <div class="card">
                         <div class="card-header card-header-grey">
                             <div class="row">
@@ -72,8 +72,8 @@
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
             <div class="row" style="margin-top:15px;">
-                <div class="col-lg-2"></div>
-                <div class="col-sm-12 col-lg-8">
+                <div class="col-lg-1 col-xl-2"></div>
+                <div class="col-md-12 col-lg-10 col-xl-8">
                     <div class="footer">
                         <div class="row">
                             <div class="col-md-6">

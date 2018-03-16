@@ -6,15 +6,15 @@
         <div class="col-sm-1 col-lg-2"></div>
     </div>
     <div class="row">
-        <div class="col-lg-2"></div>
-        <div class="col-sm-12 col-lg-8">
+        <div class="col-lg-1 col-xl-2"></div>
+        <div class="col-md-12 col-lg-10 col-xl-8">
             <div class="card">
                 <div class="card-header card-header-blue resultsPanelHeading">
                     <div class="row">
-                        <div class="col-sm-6 resultsHeader">
+                        <div class="col-md-6 resultsHeader">
                             <asp:Label ID="LabelTitle" runat="server" Text=""></asp:Label>
                         </div>
-                        <div class="col-sm-6 text-sm-right resultsHeader" runat="server" id="SearchCountDiv">
+                        <div class="col-md-6 text-md-right resultsHeader" runat="server" id="SearchCountDiv">
                             <div><asp:Label ID="LabelSearchCount" runat="server" Text=""></asp:Label></div>
                         </div>
                     </div>
