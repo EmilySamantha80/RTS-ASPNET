@@ -22,7 +22,7 @@
                 <div class="card-body" style="padding:0px;">
                     <asp:Repeater ID="ResultsRepeater" runat="server">
                         <HeaderTemplate>
-                            <table class="table table-sm table-striped">
+                            <table class="table table-sm table-striped" style="margin:0px;">
                                 <thead>
                                     <tr class="thead-dark" style="border:0;">
                                         <th style="border-color:#265A87;">Artist</th>
