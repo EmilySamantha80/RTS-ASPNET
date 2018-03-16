@@ -11,18 +11,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /> 
-    <script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href="Styles/application.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" rel="stylesheet" type="text/css" />
-    <link href="Styles/rts.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="Styles/application.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
+    <link rel="stylesheet" type="text/css" href="Styles/bootstrap-overrides.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
+    <link rel="stylesheet" type="text/css" href="Styles/rts.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <a href="#searchText" class="sr-only">Skip to main content</a>
-        <div class="container t-application">
+        <div class="container">
             <div class="row" style="margin-bottom:15px;">
                 <div class="col-sm-12" style="text-align:center">
                     <a href="Default.aspx"><img src="Images/logo.png" width="696" height="75" class="img-responsive" style="display:block;margin:auto;" alt="Merwin's Ringtone Search logo" /></a>
@@ -30,10 +32,10 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-1 col-lg-2"></div>
-                <div class="col-sm-10 col-lg-8">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
+                <div class="col-lg-2"></div>
+                <div class="col-sm-12 col-lg-8">
+                    <div class="card">
+                        <div class="card-header card-header-grey">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-8 col-md-9 searchInput">
                                     <label class="sr-only" for="searchText">Search ringtones</label>
@@ -49,7 +51,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="panel-body" style="padding-top:5px;">
+                        <div class="card-body" style="padding-top:5px;">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <div class="categoriesHeader categoriesHeaderLeft">Ringtone Categories</div>
@@ -69,37 +71,37 @@
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
-            <div class="row">
-                <div class="col-sm-1 col-lg-2"></div>
-                <div class="col-sm-10 col-lg-8">
-            <div class="footer">
-                <div class="row">
-                    <div class="col-md-6">
-                        <span runat="server" id="FooterProductName"></span><br />
-                        <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a><br />
-                        <span>Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms</span>
+            <div class="row" style="margin-top:15px;">
+                <div class="col-lg-2"></div>
+                <div class="col-sm-12 col-lg-8">
+                    <div class="footer">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span runat="server" id="FooterProductName"></span><br />
+                                <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a><br />
+                                <span>Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms</span>
+                            </div>
+                            <div class="col-md-6 text-md-right">
+                                <span>Counting since <span runat="server" id="FooterCountingSince"></span></span><br />
+                                <span>Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label></span><br />
+                                <span>Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label></span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="http://vulc.in">Vulc.in</a>
+                            </div>
+                            <div class="col-md-3 pull-md-center pull-lg-center">
+                                <a href="http://t4a.vulc.in">Tones4All</a>
+                            </div>
+                            <div class="col-md-3 pull-md-center pull-lg-center">
+                                <a href="http://pong.vulc.in">ESH Pong</a>
+                            </div>
+                            <div class="col-md-3 pull-md-right pull-lg-right">
+                                <a href="https://github.com/EmilySamantha80">GitHub</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-6 pull-md-right pull-lg-right">
-                        <span>Counting since <span runat="server" id="FooterCountingSince"></span></span><br />
-                        <span>Total Page Views: <asp:Label ID="TotalPageViews" runat="server" Text=""></asp:Label></span><br />
-                        <span>Total Unique Hits: <asp:Label ID="TotalUniqueHits" runat="server" Text=""></asp:Label></span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <a href="http://vulc.in">Vulc.in</a>
-                    </div>
-                    <div class="col-md-3 pull-md-center pull-lg-center">
-                        <a href="http://t4a.vulc.in">Tones4All</a>
-                    </div>
-                    <div class="col-md-3 pull-md-center pull-lg-center">
-                        <a href="http://pong.vulc.in">ESH Pong</a>
-                    </div>
-                    <div class="col-md-3 pull-md-right pull-lg-right">
-                        <a href="https://github.com/EmilySamantha80">GitHub</a>
-                    </div>
-                </div>
-            </div>
 
                 </div>
             </div>

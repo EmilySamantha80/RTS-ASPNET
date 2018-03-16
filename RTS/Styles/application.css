@@ -6,255 +6,67 @@ h2 {
     font-size: 1.25em;
 }
 
+h3 {
+    font-size: 1.25em;
+}
+
 a {
     color: blue;
     background-color: transparent;
 }
 
-a:visited {
+    a:visited {
+        color: blue;
+        background-color: transparent;
+    }
+
+    a:hover {
+        color: blue;
+        background-color: transparent;
+    }
+
+    a:active {
+        color: blue;
+        background-color: transparent;
+    }
+
+    a:focus {
+        color: blue;
+        background-color: transparent;
+    }
+
+.divLink {
     color: blue;
     background-color: transparent;
 }
 
-a:hover {
-    color: blue;
-    background-color: transparent;
-}
-
-a:active {
-    color: blue;
-    background-color: transparent;
-}
-
-a:focus {
-    color: blue;
-    background-color: transparent;
-}
-
-.btn-primary {
-    color: #265A87;
-    background-color: white;
-}
-
-    .btn-primary:visited {
-        color: #265A87;
-        background-color: white;
+    .divLink:hover {
+        color: blue;
+        background-color: transparent;
+        cursor: pointer;
+        text-decoration: underline;
     }
 
-    .btn-primary:hover {
-        color: white;
-        background-color: #265A87;
-    }
-
-    .btn-primary:active {
-        color: white;
-        background-color: #265A87;
-    }
-
-    .btn-primary:focus {
-        color: white;
-        background-color: #265A87;
-    }
-
-.btn-default {
-    color: black;
-    background-color: white;
-}
-
-.btn-default:visited {
-    color: black;
-    background-color: white;
-}
-
-.btn-default:hover {
-    color: black;
-    background-color: #f5f5f5;
-}
-
-.btn-default:active {
-    color: black;
-    background-color: #f5f5f5;
-}
-
-.btn-default:focus {
-    color: black;
-    background-color: #f5f5f5;
-}
-
-.active {
-    color: black !important;
-}
-
-.o-application--blue {
+.color-blue {
     color: #0000FF !important;
 }
 
-.o-application--green {
+.color-green {
     color: #006600 !important;
 }
 
-.o-application--red {
+.color-red {
     color: #B30000 !important;
 }
 
-.o-application--black {
+.color-black {
     color: black !important;
 }
 
-.o-application--white {
+.color-white {
     color: white !important;
 }
 
-.t-application--fixedwidth {
-    width: 1000px;
-}
-
-.u-hidden {
-    visibility: hidden;
-}
-
-.t-application .o-application--breadcrumb {
-    margin-top: 15px;
-    border: 1px solid lightgrey;
-}
-
-.t-application .o-application--footer {
-    padding: 0px;
-    border: 1px solid lightgrey;
-}
-
-.t-application .o-application--form-group-slim {
-    margin-bottom: 5px;
-}
-
-.t-application .o-application--form-input-slim {
-    margin-bottom: 10px;
-}
-
-.t-application .o-application--list-item-slim {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    margin-top: 2px;
-}
-
-.t-application .o-application--panel-heading {
-    padding: 0px;
-    margin: 0px;
-    color: black;
-}
-
-/* screen-xs */
-@media (max-width: 767px) {
-    .pull-xs-left {
-        text-align: left !important;
-    }
-
-    .pull-xs-center {
-        text-align: center !important;
-        margin: 0 auto !important;
-    }
-
-    .pull-xs-right {
-        text-align: right !important;
-    }
-}
-
-/* screen-sm */
-@media (min-width: 768px) and (max-width: 991px) {
-    .pull-sm-left {
-        text-align: left !important;
-    }
-
-    .pull-sm-center {
-        text-align: center !important;
-        margin: 0 auto !important;
-    }
-
-    .pull-sm-right {
-        text-align: right !important;
-    }
-    .t-application .o-application--form-span-slim {
-        margin-top: 7px;
-    }
-}
-
-/* screen-md */
-@media (min-width: 992px) and (max-width: 1199px) {
-    .pull-md-left {
-        text-align: left !important;
-    }
-
-    .pull-md-center {
-        text-align: center !important;
-        margin: 0 auto !important;
-    }
-
-    .pull-md-right {
-        text-align: right !important;
-    }
-
-    .t-application .o-application--form-span-slim {
-        margin-top: 7px;
-    }
-}
-
-/* screen-lg */
-@media (min-width: 1200px) {
-    .pull-lg-left {
-        text-align: left !important;
-    }
-
-    .pull-lg-center {
-        text-align: center !important;
-        margin: 0 auto !important;
-    }
-
-    .pull-lg-right {
-        text-align: right !important;
-    }
-    .t-application .o-application--form-span-slim {
-        margin-top: 7px;
-    }
-}
-
-/* Change the panel-primary color to be WCAG 2.0 AAA compliant */
-.panel-primary > .panel-heading {
-    background-color: #265A87;
-}
-
-.control-label {
-    font-weight:600;
-}
-
-/* Bootstrap overrides for square corners instead of rounded */
-.panel {
-    border-radius: 2px;
-    border: 1px solid lightgrey;
-}
-
-.panel-heading {
-    border-radius: 1px;
-    border-bottom-left-radius:0;
-    border-bottom-right-radius:0;
-}
-
-.btn {
-    border-radius: 2px;
-}
-
-.breadcrumb {
-    border-radius: 2px;
-}
-
-.form-control {
-    border-radius: 2px;
-}
-
-.input-group-addon {
-    border-radius: 2px;
-}
-
-.progress {
-    border-radius: 2px;
-    border: 1px solid lightgrey
+.bold {
+    font-weight: bold;
 }

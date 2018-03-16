@@ -10,7 +10,7 @@
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
     border-bottom: 0;
-    padding-top: 5px;
+    padding-top: 0px;
     padding-bottom: 0
 }
 .resultsTableHeaderRow {
@@ -31,7 +31,6 @@
 /* screen-xs */
 @media (max-width: 767px) {
     .resultsHeaderLeft {
-        font-size: 1.7em;
         color: white;
         background-color: #265A87;
         padding: 0px;
@@ -40,7 +39,6 @@
     }
 
     .resultsHeaderRight {
-        font-size: 1.7em;
         color: white;
         background-color: #265A87;
         padding: 0px;
@@ -50,13 +48,8 @@
 }
 
 .resultsHeader {
-    font-size: 1.7em;
+    font-size: 1.5em;
     color: white;
-    background-color: #265A87;
-    padding: 0px;
-    padding-left:7px;
-    padding-right:7px;
-    border: 1px solid #265A87;
 }
 
 .categoriesHeader {

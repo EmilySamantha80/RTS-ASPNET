@@ -82,6 +82,7 @@
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
     <Content Include="Styles\application.css" />
+    <Content Include="Styles\bootstrap-overrides.css" />
     <Content Include="Styles\rts.css" />
     <Content Include="System.Data.SqlClient.ConnectionString.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
