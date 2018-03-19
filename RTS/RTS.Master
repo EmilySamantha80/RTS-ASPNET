@@ -6,7 +6,7 @@
 <head runat="server">
     <title>Merwin's Ringtone Search</title>
     <meta name="description" content="Your source for old-school nokia RTTTL ringtones" />
-    <meta name="keywords" content="ringtone,nokia,rtttl" />
+    <meta name="keywords" content="ringtone,nokia,rtttl,midi" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="favicon.ico" type="image/x-icon" /> 
