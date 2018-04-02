@@ -3,9 +3,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="row">
-        <div class="col-sm-1 col-lg-2"></div>
-    </div>
-    <div class="row">
         <div class="col-lg-1 col-xl-2"></div>
         <div class="col-md-12 col-lg-10 col-xl-8">
             <div class="card">
