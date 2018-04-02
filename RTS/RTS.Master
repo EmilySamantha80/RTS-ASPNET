@@ -18,6 +18,14 @@
     <link rel="stylesheet" type="text/css" href="Styles/application.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
     <link rel="stylesheet" type="text/css" href="Styles/bootstrap-overrides.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
     <link rel="stylesheet" type="text/css" href="Styles/rts.css?v=<%= DateTime.Now.ToString("s").Replace(":","").Replace("-","") %>" />
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116766922-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-116766922-1');
+    </script>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
