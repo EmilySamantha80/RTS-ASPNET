@@ -82,7 +82,7 @@ namespace RTS
                 }
                 var midiBytes = Rtttl.ConvertRtttlToMidi(rtttl, Properties.Settings.Default.MidiProgram);
                 Response.Clear();
-                Response.Headers.Add("Content-disposition", "attachment;filename=" + result.Artist + " - " + result.Title + ".mid");
+                Response.Headers.Add("Content-disposition", "attachment;filename=\"" + result.Artist + " - " + result.Title + ".mid\"");
                 Response.ContentType = "application/octet-stream";
                 Response.BinaryWrite(midiBytes);
                 Response.End();
