@@ -81,12 +81,12 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Images\logo.png" />
+    <Content Include="..\SqlConnectionString.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Styles\application.css" />
     <Content Include="Styles\bootstrap-overrides.css" />
     <Content Include="Styles\rts.css" />
-    <Content Include="System.Data.SqlClient.ConnectionString.txt">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="ViewTone.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -137,7 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
-    <None Include="Properties\PublishProfiles\GoDaddy WebPublish.pubxml" />
     <None Include="Properties\PublishProfiles\GoDaddy FTP.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
