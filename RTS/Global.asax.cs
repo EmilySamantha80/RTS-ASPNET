@@ -13,9 +13,9 @@ namespace RTS
     {
         void Application_Start(object sender, EventArgs e)
         {
-            // Create the [DbProviderName].ConnectionString.txt file with the connection string as the only line and include
-            // it in the base folder of the project, setting "Copy Always" for the "Copy to output directory" property.
-            // Example filename: System.Data.SqlClient.ConnectionString.txt
+            // Create the SqlConnectionString.txt file with the connection string as the only line and
+            // include it in the root folder of the solution as "Content", setting "Copy Always" for the
+            // "Copy to output directory" property.
             var path = Path.Combine(AssemblyInfo.AssemblyLocation, "SqlConnectionString.txt");
             var connectionString = File.ReadAllLines(path);
             SqlExec.DbConnectionString = connectionString[0];
