@@ -16,8 +16,15 @@ namespace RTS
             // Create the SqlConnectionString.txt file with the connection string as the only line in the file
             // and place it in the root folder of the solution next to the RTS.sln file.
             var path = Path.Combine(AssemblyInfo.AssemblyLocation, "SqlConnectionString.txt");
-            var connectionString = File.ReadAllLines(path);
-            SqlExec.DbConnectionString = connectionString[0];
+            try
+            {
+                var connectionString = File.ReadAllLines(path);
+                SqlExec.DbConnectionString = connectionString[0];
+            }
+            catch
+            {
+                throw new Exception("Failed to read database configuration.");
+            }
 
             //RegisterRoutes(RouteTable.Routes);
         }
