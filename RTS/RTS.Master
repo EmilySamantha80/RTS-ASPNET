@@ -86,7 +86,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <span runat="server" id="FooterProductName"></span><br />
-                                <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Heiner</a><br />
+                                <span runat="server" id="FooterCopyright"></span>&nbsp;<a href="mailto:emilysamantha80@gmail.com">Emily Johnson</a><br />
                                 <span>Page generated in: <asp:Label ID="RequestTime" runat="server" Text=""></asp:Label> ms</span>
                             </div>
                             <div class="col-md-6 text-md-right">
